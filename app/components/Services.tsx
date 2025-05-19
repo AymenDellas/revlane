@@ -48,7 +48,7 @@ const Services = () => {
         title="Our Services"
         subtitle="Conversion-focused solutions that transform clicks into customers"
       />
-      <div className="w-[70%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="w-[70%] mx-auto max-lg:place-items-center  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, i) => {
           const Icon = service.icon;
           return (

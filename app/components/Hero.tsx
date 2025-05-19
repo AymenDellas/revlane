@@ -3,9 +3,9 @@ import React from "react";
 const Hero = () => {
   return (
     <section id="home">
-      <div className="relative flex flex-col items-center justify-center space-y-8 my-20 text-text w-[90%] lg:w-[60%] mx-auto   py-36 ">
-        <span className="absolute max-lg:w-72 max-lg:h-72 w-96 h-96 bg-accent/40 -z-10 rounded-[80%_10%] blur-3xl max-lg:left-36 left-60"></span>
-        <span className="absolute max-lg:w-72 max-lg:h-72 w-96 h-96 bg-subtle/40 -z-10 rounded-[80%_10%] blur-3xl max-lg:right-36 right-60"></span>
+      <div className="relative flex flex-col items-center justify-center space-y-8 my-20 text-text w-[90%] lg:w-[60%] mx-auto  py-8 lg:py-36 ">
+        <span className="absolute max-lg:w-50 max-lg:h-50 w-96 h-96 bg-accent/40 -z-10 rounded-[80%_10%] blur-3xl max-lg:left-36 left-60"></span>
+        <span className="absolute max-lg:w-50 max-lg:h-50 w-96 h-96 bg-subtle/40 -z-10 rounded-[80%_10%] blur-3xl max-lg:right-36 right-60"></span>
 
         <h1 className=" max-sm:text-4xl text-6xl font-bold text-center">
           We Build Landing Pages <br /> That{" "}
@@ -32,8 +32,12 @@ const Hero = () => {
           pretty. Our data-driven approach ensures your website turns visitors
           into customers.
         </p>
-        <a href="#contact" className="card">
-          Start Your Project
+        <a
+          href="#contact"
+          className="relative group px-8 py-4 rounded-full bg-gradient-to-tr from-subtle to-accent overflow-hidden"
+        >
+          <span className="absolute bg-black/20 inset-0 opacity-0 group-hover:opacity-100 transitio ease-out duration-300" />
+          <p>Start Your Project</p>
         </a>
       </div>
     </section>

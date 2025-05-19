@@ -67,7 +67,7 @@ const Contact = () => {
               <span className="text-accent bg-accent/10 rounded-md p-2">
                 <Mail size={20} />
               </span>
-              <span className="font-medium">revlane@gmail.com</span>
+              <span className="font-medium">contact@revlane.tech</span>
             </div>
 
             <div className="flex items-center space-x-3">

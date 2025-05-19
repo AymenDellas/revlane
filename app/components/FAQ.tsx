@@ -51,7 +51,7 @@ const FAQ = () => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
   };
   return (
-    <section className="w-[60%] mx-auto my-20">
+    <section className="lg:w-[60%] w-[90%] mx-auto my-20">
       <SectionHeader
         title="Frequently Asked Questions"
         subtitle="Everything you need to know about our landing page services"
