@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className="sticky top-4 my-4 z-50">
       <div className="w-[90%] flex items-center  justify-between bg-zinc-900 border border-white/10 lg:w-[50%] rounded-full mx-auto  px-6 py-2">
         <div className=" flex items-center justify-between w-full">
-          <img src="/revlanelogo.png" alt="logo" className="w-8" />
+          <img src="/revlane.png" alt="logo" className="w-8" />
           <ul className="hidden lg:flex items-center space-x-6 ">
             <li className="relative group ">
               <a

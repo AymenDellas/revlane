@@ -41,7 +41,7 @@ const Footer = () => {
           <div className="max-w-xs">
             <div className="flex items-center space-x-3 mb-4">
               <img
-                src="/revlanelogo.png"
+                src="/revlane.png"
                 alt="Revlane logo"
                 className="w-10 h-10"
               />
@@ -138,12 +138,6 @@ const Footer = () => {
             © {new Date().getFullYear()} Revlane. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-zinc-500 hover:text-zinc-300 text-sm">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-zinc-500 hover:text-zinc-300 text-sm">
-              Terms of Service
-            </a>
             <button
               onClick={scrollToTop}
               className="bg-zinc-900 p-2 rounded-full border border-zinc-800 hover:border-zinc-700 transition-all duration-200 hover:translate-y-[-2px]"
