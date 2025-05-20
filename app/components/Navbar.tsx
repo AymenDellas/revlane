@@ -10,20 +10,55 @@ const Navbar = () => {
         <div className=" flex items-center justify-between w-full">
           <img src="/revlanelogo.png" alt="logo" className="w-8" />
           <ul className="hidden lg:flex items-center space-x-6 ">
-            <li>
-              <a href="#home">Home</a>
+            <li className="relative group ">
+              <a
+                href="#home"
+                className="group-hover:text-subtle transition-colors duration-200 ease-out"
+              >
+                Home
+              </a>
+              <span className="absolute w-1.5 h-1.5 rounded-full bg-subtle left-1/2 -translate-x-1/2 -bottom-1.5" />
+              <span className="absolute w-1.5 h-1.5 rounded-full bg-subtle right-1/2 translate-x-1/2 -bottom-1.5 opacity-0 group-hover:translate-x-6  group-hover:opacity-100 transition-all duration-300 ease-out" />
+              <span className="absolute w-1.5 h-1.5 rounded-full bg-subtle left-1/2 -translate-x-1/2 -bottom-1.5 opacity-0 group-hover:-translate-x-6  group-hover:opacity-100 transition-all duration-300 ease-out" />
             </li>
-            <li>
-              <a href="#services">Services</a>
+            <li className="relative group">
+              <a
+                href="#services"
+                className="group-hover:text-subtle transition-colors duration-200 ease-out"
+              >
+                Services
+              </a>
+              <span className="absolute w-1.5 h-1.5 rounded-full bg-subtle left-1/2 -translate-x-1/2 -bottom-1.5" />
+              <span className="absolute w-1.5 h-1.5 rounded-full bg-subtle right-1/2 translate-x-1/2 -bottom-1.5 opacity-0 group-hover:translate-x-6  group-hover:opacity-100 transition-all duration-300 ease-out" />
+              <span className="absolute w-1.5 h-1.5 rounded-full bg-subtle left-1/2 -translate-x-1/2 -bottom-1.5 opacity-0 group-hover:-translate-x-6  group-hover:opacity-100 transition-all duration-300 ease-out" />
             </li>
-            <li>
-              <a href="#process">Process</a>
+            <li className="relative group">
+              <a
+                href="#process"
+                className="group-hover:text-subtle transition-colors duration-200 ease-out"
+              >
+                Process
+              </a>
+              <span className="absolute w-1.5 h-1.5 rounded-full bg-subtle left-1/2 -translate-x-1/2 -bottom-1.5" />
+              <span className="absolute w-1.5 h-1.5 rounded-full bg-subtle right-1/2 translate-x-1/2 -bottom-1.5 opacity-0 group-hover:translate-x-6  group-hover:opacity-100 transition-all duration-300 ease-out" />
+              <span className="absolute w-1.5 h-1.5 rounded-full bg-subtle left-1/2 -translate-x-1/2 -bottom-1.5 opacity-0 group-hover:-translate-x-6  group-hover:opacity-100 transition-all duration-300 ease-out" />
             </li>
-            <li>
+            <li className="relative group">
               <a href="#case_studies">Case Studies</a>
+              <span className="absolute w-1.5 h-1.5 rounded-full bg-subtle left-1/2 -translate-x-1/2 -bottom-1.5" />
+              <span className="absolute w-1.5 h-1.5 rounded-full bg-subtle right-1/2 translate-x-1/2 -bottom-1.5 opacity-0 group-hover:translate-x-6  group-hover:opacity-100 transition-all duration-300 ease-out" />
+              <span className="absolute w-1.5 h-1.5 rounded-full bg-subtle left-1/2 -translate-x-1/2 -bottom-1.5 opacity-0 group-hover:-translate-x-6  group-hover:opacity-100 transition-all duration-300 ease-out" />
             </li>
-            <li>
-              <a href="#faq">Faq</a>
+            <li className="relative group">
+              <a
+                href="#faq"
+                className="group-hover:text-subtle transition-colors duration-200 ease-out"
+              >
+                Faq
+              </a>
+              <span className="absolute w-1.5 h-1.5 rounded-full bg-subtle left-1/2 -translate-x-1/2 -bottom-1.5" />
+              <span className="absolute w-1.5 h-1.5 rounded-full bg-subtle right-1/2 translate-x-1/2 -bottom-1.5 opacity-0 group-hover:translate-x-5  group-hover:opacity-100 transition-all duration-300 ease-out" />
+              <span className="absolute w-1.5 h-1.5 rounded-full bg-subtle left-1/2 -translate-x-1/2 -bottom-1.5 opacity-0 group-hover:-translate-x-5  group-hover:opacity-100 transition-all duration-300 ease-out" />
             </li>
           </ul>
           <span onClick={() => setIsOpen(!isOpen)} className="lg:hidden">

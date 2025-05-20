@@ -102,7 +102,11 @@ const Contact = () => {
 
         {/* Right column - Form */}
         <div className="relative z-10 p-8 lg:w-3/5 bg-zinc-950">
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form
+            action="https://formspree.io/f/mwpozrww"
+            method="POST"
+            className="space-y-6"
+          >
             <h2 className="font-bold text-2xl mb-6">Get in Touch</h2>
 
             <div className="space-y-2">
