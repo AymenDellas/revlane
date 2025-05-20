@@ -7,7 +7,7 @@ const Services = () => {
     {
       title: "Custom Landing Pages",
       description:
-        "We build landing pages tailored to your offer, not cookie-cutter templates.",
+        "Each page is custom-built to match your product, audience, and conversion path—no templates, no guesswork.",
       icon: Target,
       gradient: "from-purple-500 to-indigo-600",
       points: [
@@ -19,7 +19,7 @@ const Services = () => {
     {
       title: "Blazing-Fast Performance",
       description:
-        "Speed isn't optional. We build pages that load under 2s without bloated junk.",
+        "We prioritize performance. Pages are optimized to load in under 2 seconds, improving user experience and engagement.",
       icon: Zap,
       gradient: "from-blue-500 to-sky-400",
       points: [
@@ -31,7 +31,7 @@ const Services = () => {
     {
       title: "Conversion Tracking & Analytics",
       description:
-        "Know what's working. We track key events and behaviors to fuel better results.",
+        "We implement analytics tools to monitor user behavior and key conversion events—so you can make informed decisions and iterate with confidence.",
       icon: BarChart,
       gradient: "from-emerald-500 to-teal-400",
       points: [

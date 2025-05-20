@@ -100,7 +100,7 @@ const Process = () => {
 
       <SectionHeader
         title="My Process"
-        subtitle="A streamlined approach to building your high-converting landing page"
+        subtitle="From initial discovery to final delivery, our step-by-step process ensures clarity, quality, and results—without unnecessary delays."
       />
 
       <div className="relative flex flex-col lg:flex-row gap-10">

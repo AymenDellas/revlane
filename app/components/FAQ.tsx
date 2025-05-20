@@ -54,7 +54,7 @@ const FAQ = () => {
     <section className="lg:w-[60%] w-[90%] mx-auto my-20">
       <SectionHeader
         title="Frequently Asked Questions"
-        subtitle="Everything you need to know about our landing page services"
+        subtitle="Learn more about our approach, pricing, timelines, and how we deliver landing pages that convert."
       />
       <div className="space-y-4">
         {faqs.map((faq, i) => {

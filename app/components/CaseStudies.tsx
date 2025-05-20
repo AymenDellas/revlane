@@ -55,7 +55,7 @@ const CaseStudies = () => {
     >
       <SectionHeader
         title="Our Work"
-        subtitle="Results-driven landing pages that deliver measurable ROI"
+        subtitle="A collection of landing pages we've built to showcase strategic layouts, strong messaging, and proven design principles built to convert."
       />
       <span className="absolute h-full w-full right-0  rounded-full bg-gradient-to-r from-accent via-accent to-pink-700 -z-10 opacity-10 blur-3xl" />
       <article className="flex flex-col lg:flex-row max-lg:space-y-8 lg:space-x-8 ">

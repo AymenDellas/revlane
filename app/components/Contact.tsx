@@ -19,18 +19,6 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Thanks for reaching out! We'll get back to you shortly.");
-    setFormData({
-      fullName: "",
-      email: "",
-      lookingFor: "landing-page",
-      website: "",
-    });
-  };
-
   const processSteps = [
     "Submit the form to get started",
     "Fill out a quick questionnaire before our call",
@@ -43,7 +31,7 @@ const Contact = () => {
     <section id="contact" className=" w-[90%] lg:w-[60%] mx-auto my-20">
       <SectionHeader
         title="Start Your Project"
-        subtitle="Ready to boost your conversion rates? Let's collaborate"
+        subtitle="Contact us to discuss your project. We’ll assess your goals and propose a solution built to perform."
       />
       <article className="relative h-full bg-black/80 rounded-xl overflow-hidden flex flex-col lg:flex-row">
         {/* Grid background */}
