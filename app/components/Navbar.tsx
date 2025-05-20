@@ -44,7 +44,12 @@ const Navbar = () => {
               <span className="absolute w-1.5 h-1.5 rounded-full bg-subtle left-1/2 -translate-x-1/2 -bottom-1.5 opacity-0 group-hover:-translate-x-6  group-hover:opacity-100 transition-all duration-300 ease-out" />
             </li>
             <li className="relative group">
-              <a href="#case_studies">Case Studies</a>
+              <a
+                href="#case_studies"
+                className="group-hover:text-subtle transition-colors duration-200 ease-out"
+              >
+                Case Studies
+              </a>
               <span className="absolute w-1.5 h-1.5 rounded-full bg-subtle left-1/2 -translate-x-1/2 -bottom-1.5" />
               <span className="absolute w-1.5 h-1.5 rounded-full bg-subtle right-1/2 translate-x-1/2 -bottom-1.5 opacity-0 group-hover:translate-x-6  group-hover:opacity-100 transition-all duration-300 ease-out" />
               <span className="absolute w-1.5 h-1.5 rounded-full bg-subtle left-1/2 -translate-x-1/2 -bottom-1.5 opacity-0 group-hover:-translate-x-6  group-hover:opacity-100 transition-all duration-300 ease-out" />

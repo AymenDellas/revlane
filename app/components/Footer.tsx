@@ -79,16 +79,16 @@ const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-3">
               <li className="text-zinc-400 hover:text-accent transition-colors duration-200">
-                <a href="#">Home</a>
+                <a href="#home">Home</a>
               </li>
               <li className="text-zinc-400 hover:text-accent transition-colors duration-200">
-                <a href="#">Services</a>
+                <a href="#services">Services</a>
               </li>
               <li className="text-zinc-400 hover:text-accent transition-colors duration-200">
-                <a href="#">Case Studies</a>
+                <a href="#case_studies">Case Studies</a>
               </li>
               <li className="text-zinc-400 hover:text-accent transition-colors duration-200">
-                <a href="#">Contact</a>
+                <a href="#contact">Contact</a>
               </li>
             </ul>
           </div>
@@ -98,16 +98,16 @@ const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Services</h3>
             <ul className="space-y-3">
               <li className="text-zinc-400 hover:text-accent transition-colors duration-200">
-                <a href="#">Custom Landing Pages</a>
+                <a href="#services">Custom Landing Pages</a>
               </li>
               <li className="text-zinc-400 hover:text-accent transition-colors duration-200">
-                <a href="#">Conversion Optimization</a>
+                <a href="#services">Conversion Optimization</a>
               </li>
               <li className="text-zinc-400 hover:text-accent transition-colors duration-200">
-                <a href="#">Performance Tuning</a>
+                <a href="#services">Performance Tuning</a>
               </li>
               <li className="text-zinc-400 hover:text-accent transition-colors duration-200">
-                <a href="#">Analytics Integration</a>
+                <a href="#services">Analytics Integration</a>
               </li>
             </ul>
           </div>
@@ -120,7 +120,7 @@ const Footer = () => {
                 <span className="text-accent bg-accent/10 rounded-md p-2">
                   <Mail size={16} />
                 </span>
-                <span>revlane@gmail.com</span>
+                <span>contact@revlane.tech</span>
               </li>
               <li className="flex items-center space-x-3 text-zinc-400">
                 <span className="text-accent bg-accent/10 rounded-md p-2">
