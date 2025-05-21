@@ -54,7 +54,8 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://instagram.com/revlaneagency"
+                target="_blank"
                 className="bg-zinc-900 p-2 rounded-full border border-zinc-800 hover:border-zinc-700 transition-colors duration-200"
               >
                 <Instagram size={16} />
