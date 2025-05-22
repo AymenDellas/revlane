@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className="w-[90%] flex items-center  justify-between bg-zinc-900 border border-white/10 lg:w-[50%] rounded-lg mx-auto  px-6 py-2">
         <div className=" flex items-center justify-between w-full">
           <img src="/revlane.png" alt="logo" className="w-8" />
-          <ul className="hidden lg:flex items-center space-x-6 ">
+          <ul className="max-lg:hidden lg:flex items-center space-x-6 ">
             <li className="relative group ">
               <a
                 href="#home"
@@ -56,7 +56,7 @@ const Navbar = () => {
           <span onClick={() => setIsOpen(true)} className="lg:hidden">
             <Menu />
           </span>
-          <div className="max-lg:hidden flex items-center space-x-2">
+          <div className="max-lg:hidden lg:flex items-center space-x-2">
             <a
               href="#contact"
               onClick={() => setActiveIndex(1)}

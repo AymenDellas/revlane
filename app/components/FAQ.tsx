@@ -61,7 +61,7 @@ const FAQ = () => {
           return (
             <div
               onClick={() => toggleFaq(i)}
-              className="border border-subtle/20 rounded-lg p-4 bg-black/20 space-y-4"
+              className="border border-subtle/20 rounded-lg p-4 bg-black/10 hover:bg-black/30 space-y-4 cursor-pointer ease-out duration-300"
             >
               <div className="flex items-center justify-between">
                 <p className="font-bold">{faq.question}</p>{" "}
