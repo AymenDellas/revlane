@@ -32,49 +32,49 @@ const Process = () => {
     {
       title: "Fill Out the Quick Questionnaire",
       description:
-        "Before anything starts, you'll complete a form to help me understand your business, target audience, goals, and what you expect from the landing page. This information helps set clear expectations and ensures we're aligned from the start.",
+        "Before anything starts, you'll complete a form to help us understand your business, target audience, goals, and what you expect from the landing page. This information helps set clear expectations and ensures we're aligned from the start.",
       icon: FileText,
       color: "from-purple-500 to-indigo-600",
     },
     {
       title: "Book a Discovery Call",
       description:
-        "Once I receive your form, I'll get back to you with a scheduling link. We'll hop on a quick 30-45 minute call to dig deeper into your answers, align on expectations, and establish a solid foundation for our project partnership.",
+        "Once we receive your form, We'll get back to you with a scheduling link. We'll hop on a quick 30-45 minute call to dig deeper into your answers, align on expectations, and establish a solid foundation for our project partnership.",
       icon: Phone,
       color: "from-blue-500 to-sky-400",
     },
     {
       title: "Receive a Custom Proposal & Contract",
       description:
-        "After our call, I'll send a proposal tailored to your specific needs. It includes the project scope, timeline, pricing, and deliverables. The contract clearly defines revision policies, payment terms, and can be signed electronically for convenience.",
+        "After our call, We'll send a proposal tailored to your specific needs. It includes the project scope, timeline, pricing, and deliverables. The contract clearly defines revision policies, payment terms, and can be signed electronically for convenience.",
       icon: FileEdit,
       color: "from-emerald-500 to-teal-400",
     },
     {
       title: "50% Upfront Payment",
       description:
-        "To secure your spot in my project queue and kickstart the work, a 50% upfront payment is required. This makes our partnership official and allows me to set up project management tools to keep everything organized and transparent throughout.",
+        "To secure your spot in our project queue and kickstart the work, a 50% upfront payment is required. This makes our partnership official and allows us to set up project management tools to keep everything organized and transparent throughout.",
       icon: CreditCard,
       color: "from-pink-500 to-rose-400",
     },
     {
       title: "Design & Development",
       description:
-        "I'll design concepts based on your brand and objectives, followed by development with clean, optimized code ensuring fast loading times. You'll receive regular updates throughout this phase so you're always informed on progress.",
+        "We'll design concepts based on your brand and objectives, followed by development with clean, optimized code ensuring fast loading times. You'll receive regular updates throughout this phase so you're always informed on progress.",
       icon: Palette,
       color: "from-amber-500 to-orange-400",
     },
     {
       title: "Revisions & Final Edits",
       description:
-        "You'll review the draft landing page and provide any feedback for revisions. I'll implement your requested changes. This collaborative refinement process ensures the final result matches your vision perfectly.",
+        "You'll review the draft landing page and provide any feedback for revisions. We'll implement your requested changes. This collaborative refinement process ensures the final result matches your vision perfectly.",
       icon: PenTool,
       color: "from-red-500 to-rose-400",
     },
     {
       title: "Launch & Support",
       description:
-        "After final payment, I'll deploy your landing page to your hosting environment. You'll receive comprehensive documentation and technical support for 14 days post-launch, with optional maintenance services available if you need ongoing assistance.",
+        "After final payment, We'll deploy your landing page to your hosting environment. You'll receive comprehensive documentation and technical support for 14 days post-launch, with optional maintenance services available if you need ongoing assistance.",
       icon: Rocket,
       color: "from-green-500 to-emerald-400",
     },
@@ -99,7 +99,7 @@ const Process = () => {
       <div className="absolute inset-0 bg-grid-pattern opacity-5 -z-10" />
 
       <SectionHeader
-        title="My Process"
+        title="Our Process"
         subtitle="From initial discovery to final delivery, our step-by-step process ensures clarity, quality, and results—without unnecessary delays."
       />
 

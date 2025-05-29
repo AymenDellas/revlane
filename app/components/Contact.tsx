@@ -518,7 +518,7 @@ const Contact = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   required
-                  placeholder="Tell me what you need help with, your goals, or any ideas you have in mind."
+                  placeholder="Tell us what you need help with, your goals, or any ideas you have in mind."
                   className={`w-full bg-zinc-900 border rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:border-transparent transition-colors ${
                     touched.lookingFor && errors.lookingFor
                       ? "border-red-500 focus:ring-red-500"
