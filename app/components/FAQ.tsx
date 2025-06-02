@@ -51,7 +51,8 @@ const FAQ = () => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
   };
   return (
-    <section id="faq" className="lg:w-[60%] w-[90%] mx-auto my-20">
+    <section id="faq" className="relative lg:w-[60%] w-[90%] mx-auto py-20">
+      <div className="absolute  -left-[690px] inset-0 -z-10 h-full w-[300%] bg-[radial-gradient(#31313175_2px,transparent_2px)] [background-size:50px_50px]" />
       <SectionHeader
         title="Frequently Asked Questions"
         subtitle="Learn more about our approach, pricing, timelines, and how we deliver landing pages that convert."

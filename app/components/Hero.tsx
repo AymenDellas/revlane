@@ -4,8 +4,9 @@ import { useActiveIndex } from "@/lib/store";
 const Hero = () => {
   const { activeIndex, setActiveIndex } = useActiveIndex();
   return (
-    <section id="home">
-      <div className="relative flex flex-col items-center justify-center space-y-8 my-20 text-text w-[90%] lg:w-[60%] mx-auto  py-8 lg:py-36 ">
+    <section id="home" className="relative">
+      <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(#31313175_2px,transparent_2px)] [background-size:50px_50px]" />
+      <div className="relative flex flex-col items-center justify-center space-y-8 py-20 text-text w-[90%] lg:w-[60%] mx-auto   lg:py-36 ">
         <span className="absolute max-lg:w-50 max-lg:h-50 w-96 h-96 bg-accent/40 -z-10 rounded-[80%_10%] blur-3xl max-lg:left-36 left-60"></span>
         <span className="absolute max-lg:w-50 max-lg:h-50 w-96 h-96 bg-subtle/40 -z-10 rounded-[80%_10%] blur-3xl max-lg:right-36 right-60"></span>
         <span className="border border-accent bg-accent/10 backdrop-blur-lg rounded-full px-4 py-1 text-accent">

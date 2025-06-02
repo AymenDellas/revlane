@@ -53,6 +53,7 @@ const CaseStudies = () => {
       id="case_studies"
       className="relative w-[90%]  xl:w-[70%] mx-auto "
     >
+      <div className="absolute  -left-96 inset-0 -z-10 h-full w-[160%] bg-[radial-gradient(#31313175_2px,transparent_2px)] [background-size:50px_50px]" />
       <SectionHeader
         title="Our Work"
         subtitle="A collection of landing pages we've built to showcase strategic layouts, strong messaging, and proven design principles built to convert."

@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { Target, Zap, BarChart } from "lucide-react";
 import SectionHeader from "./SectionHeader";
 
@@ -43,7 +44,8 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="my-20">
+    <section id="services" className="relative py-20">
+      <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(#31313175_2px,transparent_2px)] [background-size:50px_50px]" />
       <SectionHeader
         title="Our Services"
         subtitle="Conversion-focused solutions that transform clicks into customers"
@@ -54,14 +56,14 @@ const Services = () => {
           return (
             <div
               key={i}
-              className="bg-zinc-950 rounded-lg p-6 border border-zinc-800 w-full max-w-sm relative overflow-hidden"
+              className="bg-black rounded-lg p-6 border border-zinc-800 w-full max-w-sm relative overflow-hidden"
             >
               <div
                 className="absolute inset-0 opacity-40"
                 style={{
                   backgroundImage:
                     "linear-gradient(to right, #2a2a2a 1px, transparent 1px), linear-gradient(to bottom, #2a2a2a 1px, transparent 1px)",
-                  backgroundSize: "40px 40px",
+                  backgroundSize: "20px 20px",
                   backgroundPosition: "0 0",
                 }}
               />

@@ -303,7 +303,8 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="w-[90%] lg:w-[60%] mx-auto my-20">
+    <section id="contact" className="relative w-[90%] lg:w-[60%] mx-auto py-20">
+      <div className="absolute  -left-[690px] inset-0 -z-10 h-full w-[300%] bg-[radial-gradient(#31313175_2px,transparent_2px)] [background-size:50px_50px]" />
       <SectionHeader
         title="Start Your Project"
         subtitle="Contact us to discuss your project. We'll assess your goals and propose a solution built to perform."

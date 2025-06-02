@@ -93,8 +93,8 @@ const Process = () => {
   };
 
   return (
-    <section id="process" className="relative w-[92%] lg:w-[80%] mx-auto my-24">
-      {/* Background effects */}
+    <section id="process" className="relative w-[92%] lg:w-[80%] mx-auto py-24">
+      <div className="absolute  -left-96 inset-0 -z-10 h-full w-[160%] bg-[radial-gradient(#31313175_2px,transparent_2px)] [background-size:50px_50px]" />
       <div className="absolute h-full w-full right-0 rounded-full bg-gradient-to-r from-accent via-accent to-pink-700 -z-10 opacity-10 blur-3xl" />
       <div className="absolute inset-0 bg-grid-pattern opacity-5 -z-10" />
 
