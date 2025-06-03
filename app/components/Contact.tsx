@@ -3,6 +3,7 @@ import { Mail, Phone, Send, CheckCircle, AlertCircle } from "lucide-react";
 import React, { useState } from "react";
 import SectionHeader from "./SectionHeader";
 import { useActiveIndex } from "@/lib/store";
+import { motion } from "motion/react";
 // TypeScript types
 type FormData = {
   fullName: string;
@@ -304,12 +305,24 @@ const Contact = () => {
 
   return (
     <section id="contact" className="relative w-[90%] lg:w-[60%] mx-auto py-20">
-      <div className="absolute  -left-[690px] inset-0 -z-10 h-full w-[300%] bg-[radial-gradient(#31313175_2px,transparent_2px)] [background-size:50px_50px]" />
-      <SectionHeader
-        title="Start Your Project"
-        subtitle="Contact us to discuss your project. We'll assess your goals and propose a solution built to perform."
-      />
-      <article className="relative h-full bg-black/80 rounded-xl overflow-hidden flex flex-col lg:flex-row">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        <SectionHeader
+          title="Start Your Project"
+          subtitle="Contact us to discuss your project. We'll assess your goals and propose a solution built to perform."
+        />
+      </motion.div>
+      <motion.article
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="relative h-full bg-black/80 rounded-xl overflow-hidden flex flex-col lg:flex-row"
+      >
         {/* Grid background */}
         <div
           className="absolute inset-0 opacity-40"
@@ -775,7 +788,7 @@ const Contact = () => {
             </form>
           )}
         </div>
-      </article>
+      </motion.article>
     </section>
   );
 };

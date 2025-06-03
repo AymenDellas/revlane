@@ -4,6 +4,7 @@ import React from "react";
 import { useState } from "react";
 import Link from "next/link";
 import SectionHeader from "./SectionHeader";
+import { motion } from "motion/react";
 const CaseStudies = () => {
   const caseStudies = [
     {
@@ -53,18 +54,28 @@ const CaseStudies = () => {
       id="case_studies"
       className="relative w-[90%]  xl:w-[70%] mx-auto "
     >
-      <div className="absolute  -left-96 inset-0 -z-10 h-full w-[160%] bg-[radial-gradient(#31313175_2px,transparent_2px)] [background-size:50px_50px]" />
-      <SectionHeader
-        title="Our Work"
-        subtitle="A collection of landing pages we've built to showcase strategic layouts, strong messaging, and proven design principles built to convert."
-      />
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        <SectionHeader
+          title="Our Work"
+          subtitle="A collection of landing pages we've built to showcase strategic layouts, strong messaging, and proven design principles built to convert."
+        />
+      </motion.div>
       <span className="absolute h-full w-full right-0  rounded-full bg-gradient-to-r from-accent via-accent to-pink-700 -z-10 opacity-10 blur-3xl" />
       <article className="flex flex-col lg:flex-row max-lg:space-y-8 lg:space-x-8 ">
         <div className="space-y-6 ">
           {caseStudies.map((study, index) => {
             return (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.2 }}
                 onClick={() => setActiveTab(index)}
                 className={`flex items-center justify-between p-4 rounded-lg  backdrop-blur-lg border border-subtle/40 cursor-pointer hover:bg-black/40 transition-colors duration-300 ease-out ${
                   activeTab === index ? "bg-black/20" : "bg-black/5"
@@ -79,11 +90,17 @@ const CaseStudies = () => {
                 <span>
                   {activeTab === index ? <ChevronDown /> : <ChevronRight />}
                 </span>
-              </div>
+              </motion.div>
             );
           })}
         </div>
-        <div className="bg-black/20 backdrop-blur-2xl border border-subtle/40 rounded-lg overflow-hidden lg:w-2/3 space-y-4 ">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="bg-black/20 backdrop-blur-2xl border border-subtle/40 rounded-lg overflow-hidden lg:w-2/3 space-y-4 "
+        >
           <div className="relative h-96 w-full overflow-hidden">
             <img
               src={current.image}
@@ -117,7 +134,10 @@ const CaseStudies = () => {
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                 {current.highlights.map((highlight, i) => {
                   return (
-                    <div className="flex items-center bg-accent/5 rounded-lg border border-subtle/20 p-2 space-x-4">
+                    <div
+                      key={i}
+                      className="flex items-center bg-accent/5 rounded-lg border border-subtle/20 p-2 space-x-4"
+                    >
                       <div className="flex justify-center">
                         <span className="w-2 h-2 rounded-full bg-accent" />
                       </div>
@@ -128,7 +148,7 @@ const CaseStudies = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </article>
     </section>
   );

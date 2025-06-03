@@ -2,14 +2,18 @@
 import { useActiveIndex } from "@/lib/store";
 import { Menu, X } from "lucide-react";
 import React, { useState } from "react";
-
+import { motion } from "motion/react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { activeIndex, setActiveIndex } = useActiveIndex();
   return (
     <>
-      <div className="absolute inset-0 -z-10 h-[10%] w-full bg-[radial-gradient(#31313175_2px,transparent_2px)] [background-size:50px_50px]" />
-      <nav className="sticky top-3 py-4 z-50">
+      <motion.nav
+        initial={{ y: 10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="sticky top-3 py-4 z-50"
+      >
         <div className="w-[90%] flex items-center  justify-between bg-zinc-900 border border-white/10 lg:w-[85%] 2xl:w-[60%] rounded-lg mx-auto  px-6 py-2">
           <div className=" flex items-center justify-between w-full">
             <img src="/revlane.png" alt="logo" className="w-8" />
@@ -154,7 +158,7 @@ const Navbar = () => {
             </div>
           </>
         )}
-      </nav>
+      </motion.nav>
     </>
   );
 };

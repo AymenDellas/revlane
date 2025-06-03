@@ -1,31 +1,52 @@
 "use client";
 import React from "react";
 import { useActiveIndex } from "@/lib/store";
+import { motion } from "motion/react";
 const Hero = () => {
   const { activeIndex, setActiveIndex } = useActiveIndex();
   return (
-    <section id="home" className="relative">
-      <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(#31313175_2px,transparent_2px)] [background-size:50px_50px]" />
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      id="home"
+      className="relative"
+    >
       <div className="relative flex flex-col items-center justify-center space-y-8 py-20 text-text w-[90%] lg:w-[60%] mx-auto   lg:py-36 ">
         <span className="absolute max-lg:w-50 max-lg:h-50 w-96 h-96 bg-accent/40 -z-10 rounded-[80%_10%] blur-3xl max-lg:left-36 left-60"></span>
         <span className="absolute max-lg:w-50 max-lg:h-50 w-96 h-96 bg-subtle/40 -z-10 rounded-[80%_10%] blur-3xl max-lg:right-36 right-60"></span>
         <span className="border border-accent bg-accent/10 backdrop-blur-lg rounded-full px-4 py-1 text-accent">
           Built for short attention spans
         </span>
-        <h1 className=" max-sm:text-4xl text-6xl font-bold text-center">
+        <motion.h1
+          initial={{ y: 15 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className=" max-sm:text-4xl text-6xl font-bold text-center"
+        >
           <span className="relative  text-center text-transparent bg-clip-text bg-gradient-to-b from-accent  to-subtle">
             Conversion Optimized
           </span>
           <br />
           Landing Pages
-        </h1>
-        <p className="text-lg text-zinc-300 text-center">
+        </motion.h1>
+        <motion.p
+          initial={{ y: 10 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="text-lg text-zinc-300 text-center"
+        >
           We design and build landing pages with one purpose—
           <b className="font-bold">conversion</b>. <br /> Each page is
           structured to guide users, communicate your offer clearly, and drive
           action.
-        </p>
-        <div className="flex flex-col justify-center  lg:flex-row max-lg:space-y-4 items-center lg:space-x-4">
+        </motion.p>
+        <motion.div
+          initial={{ y: 15 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="flex flex-col justify-center  lg:flex-row max-lg:space-y-4 items-center lg:space-x-4"
+        >
           <a
             onClick={() => setActiveIndex(1)}
             href="#contact"
@@ -41,9 +62,9 @@ const Hero = () => {
           >
             Get Free Audit
           </a>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

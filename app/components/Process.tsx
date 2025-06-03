@@ -13,7 +13,7 @@ import {
   ArrowRight,
   Check,
 } from "lucide-react";
-
+import { motion } from "motion/react";
 const Process = () => {
   const [activeStep, setActiveStep] = useState(0);
   const [animating, setAnimating] = useState(false);
@@ -94,14 +94,19 @@ const Process = () => {
 
   return (
     <section id="process" className="relative w-[92%] lg:w-[80%] mx-auto py-24">
-      <div className="absolute  -left-96 inset-0 -z-10 h-full w-[160%] bg-[radial-gradient(#31313175_2px,transparent_2px)] [background-size:50px_50px]" />
-      <div className="absolute h-full w-full right-0 rounded-full bg-gradient-to-r from-accent via-accent to-pink-700 -z-10 opacity-10 blur-3xl" />
+      <div className="absolute h-full w-full right-0 rounded-full bg-gradient-to-r from-accent via-accent to-subtle -z-10 opacity-10 blur-3xl" />
       <div className="absolute inset-0 bg-grid-pattern opacity-5 -z-10" />
-
-      <SectionHeader
-        title="Our Process"
-        subtitle="From initial discovery to final delivery, our step-by-step process ensures clarity, quality, and results—without unnecessary delays."
-      />
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        <SectionHeader
+          title="Our Process"
+          subtitle="From initial discovery to final delivery, our step-by-step process ensures clarity, quality, and results—without unnecessary delays."
+        />
+      </motion.div>
 
       <div className="relative flex flex-col lg:flex-row gap-10">
         {/* Process Timeline Navigation */}
@@ -113,9 +118,13 @@ const Process = () => {
               const isActive = activeStep === i;
 
               return (
-                <div
+                <motion.div
                   id={`step-${i}`}
                   key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.1 }}
                   onClick={() => setActiveStep(i)}
                   className={`flex items-center space-x-4 p-4 rounded-xl transition-all duration-300 cursor-pointer group
                     ${
@@ -183,14 +192,20 @@ const Process = () => {
                         : "Coming up"}
                     </span>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
         </div>
 
         {/* Process Details Panel */}
-        <div className="lg:w-2/3">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="lg:w-2/3"
+        >
           <div
             className={`bg-black/20 backdrop-blur-lg border border-subtle/40 rounded-xl p-8 relative overflow-hidden shadow-xl transition-opacity duration-300 ${
               animating ? "opacity-50" : "opacity-100"
@@ -280,7 +295,7 @@ const Process = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

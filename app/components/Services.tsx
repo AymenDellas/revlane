@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Target, Zap, BarChart } from "lucide-react";
 import SectionHeader from "./SectionHeader";
-
+import { motion } from "motion/react";
 const Services = () => {
   const services = [
     {
@@ -45,16 +45,26 @@ const Services = () => {
 
   return (
     <section id="services" className="relative py-20">
-      <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(#31313175_2px,transparent_2px)] [background-size:50px_50px]" />
-      <SectionHeader
-        title="Our Services"
-        subtitle="Conversion-focused solutions that transform clicks into customers"
-      />
-      <div className="w-[70%] mx-auto max-lg:place-items-center  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        <SectionHeader
+          title="Our Services"
+          subtitle="Conversion-focused solutions that transform clicks into customers"
+        />
+      </motion.div>
+      <motion.div className="w-[70%] mx-auto max-lg:place-items-center  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, i) => {
           const Icon = service.icon;
           return (
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.2 }}
               key={i}
               className="bg-black rounded-lg p-6 border border-zinc-800 w-full max-w-sm relative overflow-hidden"
             >
@@ -89,10 +99,10 @@ const Services = () => {
                   ))}
                 </ul>
               </div>
-            </div>
+            </motion.div>
           );
         })}
-      </div>
+      </motion.div>
     </section>
   );
 };
