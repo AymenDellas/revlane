@@ -11,6 +11,7 @@ export default {
         'purple': '#6C5CE7',
         'light-purple': '#A29BFE',
         'accent': '#00D2D3',
+        'accent-secondary': '#FF7F50',
         'subtle': 'rgba(108, 92, 231, 0.2)',
         'text': '#F5F5F7',
       },

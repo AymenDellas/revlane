@@ -321,14 +321,14 @@ const Contact = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="relative h-full bg-black/80 rounded-xl overflow-hidden flex flex-col lg:flex-row"
+        className="relative h-full bg-gray-50 rounded-xl overflow-hidden flex flex-col lg:flex-row"
       >
         {/* Grid background */}
         <div
-          className="absolute inset-0 opacity-40"
+          className="absolute inset-0 opacity-20"
           style={{
             backgroundImage:
-              "linear-gradient(to right, #2a2a2a 1px, transparent 1px), linear-gradient(to bottom, #2a2a2a 1px, transparent 1px)",
+              "linear-gradient(to right, #e0e0e0 1px, transparent 1px), linear-gradient(to bottom, #e0e0e0 1px, transparent 1px)",
             backgroundSize: "40px 40px",
             backgroundPosition: "0 0",
           }}
@@ -365,7 +365,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="border-t border-zinc-700 pt-6">
+          <div className="border-t border-gray-200 pt-6">
             <h3 className="font-bold text-xl mb-4">Our Process</h3>
             <ol className="space-y-3">
               {processSteps.map((step, index) => (
@@ -373,14 +373,14 @@ const Contact = () => {
                   <span className="flex items-center justify-center min-w-6 h-6 rounded-full bg-accent/20 text-accent text-xs font-bold mt-0.5">
                     {index + 1}
                   </span>
-                  <p className="text-zinc-300">{step}</p>
+                  <p className="text-gray-600">{step}</p>
                 </li>
               ))}
             </ol>
           </div>
 
           <div className="pt-6">
-            <p className="text-zinc-400 text-sm">
+            <p className="text-gray-500 text-sm">
               We typically respond within 24-48 business hours. For urgent
               inquiries, please call the phone number listed above.
             </p>
@@ -388,7 +388,7 @@ const Contact = () => {
         </div>
 
         {/* Right column - Form */}
-        <div className="relative z-10 p-8 lg:w-3/5 bg-zinc-950 min-h-[700px]">
+        <div className="relative z-10 p-8 lg:w-3/5 bg-white min-h-[700px]">
           <div className="relative flex items-center space-x-6 mb-8">
             <button
               onClick={() => {
@@ -422,7 +422,7 @@ const Contact = () => {
                 <span className="absolute w-full left-0 -bottom-2 h-0.5 rounded-full bg-accent" />
               )}
             </button>
-            <span className="absolute w-full h-[1px] -bottom-2 -z-10 bg-subtle/20 rounded-full" />
+            <span className="absolute w-full h-[1px] -bottom-2 -z-10 bg-gray-200 rounded-full" />
           </div>
 
           {/* Form success messages */}
@@ -453,7 +453,7 @@ const Contact = () => {
               <div className="space-y-2">
                 <label
                   htmlFor="fullName"
-                  className="block text-sm font-medium text-zinc-300"
+                  className="block text-sm font-medium text-gray-700"
                 >
                   Full Name <span className="text-accent">*</span>
                 </label>
@@ -465,12 +465,12 @@ const Contact = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   required
-                  className={`w-full bg-zinc-900 border rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:border-transparent transition-colors ${
+                  className={`w-full bg-gray-50 border rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:border-transparent transition-colors placeholder-gray-400 ${
                     touched.fullName && errors.fullName
                       ? "border-red-500 focus:ring-red-500"
                       : touched.fullName && !errors.fullName
                       ? "border-green-500 focus:ring-accent"
-                      : "border-zinc-700 focus:ring-accent"
+                      : "border-gray-300 focus:ring-accent"
                   }`}
                   placeholder="John Doe"
                   disabled={submitting}
@@ -486,7 +486,7 @@ const Contact = () => {
               <div className="space-y-2">
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-zinc-300"
+                  className="block text-sm font-medium text-gray-700"
                 >
                   Email Address <span className="text-accent">*</span>
                 </label>
@@ -498,12 +498,12 @@ const Contact = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   required
-                  className={`w-full bg-zinc-900 border rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:border-transparent transition-colors ${
+                  className={`w-full bg-gray-50 border rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:border-transparent transition-colors placeholder-gray-400 ${
                     touched.email && errors.email
                       ? "border-red-500 focus:ring-red-500"
                       : touched.email && !errors.email
                       ? "border-green-500 focus:ring-accent"
-                      : "border-zinc-700 focus:ring-accent"
+                      : "border-gray-300 focus:ring-accent"
                   }`}
                   placeholder="you@example.com"
                   disabled={submitting}
@@ -519,7 +519,7 @@ const Contact = () => {
               <div className="space-y-2">
                 <label
                   htmlFor="lookingFor"
-                  className="block text-sm font-medium text-zinc-300"
+                  className="block text-sm font-medium text-gray-700"
                 >
                   What are you looking for?{" "}
                   <span className="text-accent">*</span>
@@ -533,12 +533,12 @@ const Contact = () => {
                   onBlur={handleBlur}
                   required
                   placeholder="Tell us what you need help with, your goals, or any ideas you have in mind."
-                  className={`w-full bg-zinc-900 border rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:border-transparent transition-colors ${
+                  className={`w-full bg-gray-50 border rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:border-transparent transition-colors placeholder-gray-400 ${
                     touched.lookingFor && errors.lookingFor
                       ? "border-red-500 focus:ring-red-500"
                       : touched.lookingFor && !errors.lookingFor
                       ? "border-green-500 focus:ring-accent"
-                      : "border-zinc-700 focus:ring-accent"
+                      : "border-gray-300 focus:ring-accent"
                   }`}
                   disabled={submitting}
                 ></textarea>
@@ -553,9 +553,9 @@ const Contact = () => {
               <div className="space-y-2">
                 <label
                   htmlFor="website"
-                  className="block text-sm font-medium text-zinc-300"
+                  className="block text-sm font-medium text-gray-700"
                 >
-                  Website URL <span className="text-zinc-500">(optional)</span>
+                  Website URL <span className="text-gray-500">(optional)</span>
                 </label>
                 <input
                   type="url"
@@ -564,12 +564,12 @@ const Contact = () => {
                   value={formData.website}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  className={`w-full bg-zinc-900 border rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:border-transparent transition-colors ${
+                  className={`w-full bg-gray-50 border rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:border-transparent transition-colors placeholder-gray-400 ${
                     touched.website && errors.website
                       ? "border-red-500 focus:ring-red-500"
                       : touched.website && !errors.website && formData.website
                       ? "border-green-500 focus:ring-accent"
-                      : "border-zinc-700 focus:ring-accent"
+                      : "border-gray-300 focus:ring-accent"
                   }`}
                   placeholder="https://yourwebsite.com"
                   disabled={submitting}
@@ -621,7 +621,7 @@ const Contact = () => {
                 )}
               </button>
 
-              <p className="text-zinc-400 text-xs text-center mt-4">
+              <p className="text-gray-500 text-xs text-center mt-4">
                 By submitting this form, you agree to our{" "}
                 <a href="#" className="text-accent hover:underline">
                   Terms
@@ -638,7 +638,7 @@ const Contact = () => {
               <h2 className="font-bold text-2xl mb-6">
                 Get Your Free Website Audit
               </h2>
-              <p className="text-zinc-400 mb-6">
+              <p className="text-gray-500 mb-6">
                 We'll analyze your website, then send you a detailed report with
                 actionable recommendations.
               </p>
@@ -646,7 +646,7 @@ const Contact = () => {
               <div className="space-y-2">
                 <label
                   htmlFor="fullName"
-                  className="block text-sm font-medium text-zinc-300"
+                  className="block text-sm font-medium text-gray-700"
                 >
                   Full Name <span className="text-accent">*</span>
                 </label>
@@ -658,12 +658,12 @@ const Contact = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   required
-                  className={`w-full bg-zinc-900 border rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:border-transparent transition-colors ${
+                  className={`w-full bg-gray-50 border rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:border-transparent transition-colors placeholder-gray-400 ${
                     touched.fullName && errors.fullName
                       ? "border-red-500 focus:ring-red-500"
                       : touched.fullName && !errors.fullName
                       ? "border-green-500 focus:ring-accent"
-                      : "border-zinc-700 focus:ring-accent"
+                      : "border-gray-300 focus:ring-accent"
                   }`}
                   placeholder="John Doe"
                   disabled={submitting}
@@ -679,7 +679,7 @@ const Contact = () => {
               <div className="space-y-2">
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-zinc-300"
+                  className="block text-sm font-medium text-gray-700"
                 >
                   Email Address <span className="text-accent">*</span>
                 </label>
@@ -691,12 +691,12 @@ const Contact = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   required
-                  className={`w-full bg-zinc-900 border rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:border-transparent transition-colors ${
+                  className={`w-full bg-gray-50 border rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:border-transparent transition-colors placeholder-gray-400 ${
                     touched.email && errors.email
                       ? "border-red-500 focus:ring-red-500"
                       : touched.email && !errors.email
                       ? "border-green-500 focus:ring-accent"
-                      : "border-zinc-700 focus:ring-accent"
+                      : "border-gray-300 focus:ring-accent"
                   }`}
                   placeholder="you@example.com"
                   disabled={submitting}
@@ -712,7 +712,7 @@ const Contact = () => {
               <div className="space-y-2">
                 <label
                   htmlFor="website"
-                  className="block text-sm font-medium text-zinc-300"
+                  className="block text-sm font-medium text-gray-700"
                 >
                   Website URL <span className="text-accent">*</span>
                 </label>
@@ -724,12 +724,12 @@ const Contact = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   required
-                  className={`w-full bg-zinc-900 border rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:border-transparent transition-colors ${
+                  className={`w-full bg-gray-50 border rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:border-transparent transition-colors placeholder-gray-400 ${
                     touched.website && errors.website
                       ? "border-red-500 focus:ring-red-500"
                       : touched.website && !errors.website && formData.website
                       ? "border-green-500 focus:ring-accent"
-                      : "border-zinc-700 focus:ring-accent"
+                      : "border-gray-300 focus:ring-accent"
                   }`}
                   placeholder="https://yourwebsite.com"
                   disabled={submitting}
@@ -781,7 +781,7 @@ const Contact = () => {
                 )}
               </button>
 
-              <p className="text-zinc-400 text-sm mt-4">
+              <p className="text-gray-500 text-sm mt-4">
                 You'll receive your custom website audit within 1-3 business
                 days. No strings attached.
               </p>

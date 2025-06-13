@@ -1,13 +1,13 @@
 @import "tailwindcss";
 @theme {
-  --color-primary: #121118;
-  --color-accent: #5a4c8a;
-  --color-secondary: #1c1824;
-  --color-text: #f3f2f7;
-  --color-subtle: #a59fc1;
-  --color-highlight: #7d6bd9;
-  --color-border: #2d293b;
-  --color-bg-light: #191622;
+  --color-primary: #F9FAFB;
+  --color-text: #1F2937;
+  --color-accent: #00D2D3;
+  --color-accent-secondary: #FF7F50;
+  --color-secondary: #FFFFFF;
+  --color-subtle: #6B7280;
+  --color-border: #D1D5DB;
+  --color-bg-light: #E5E7EB;
   --animate-spin: spin 4s linear infinite;
   @keyframes spin {
     from {
@@ -21,7 +21,7 @@
 
 html {
   background-color: var(--color-primary);
-  color: white;
+  color: var(--color-text);
 }
 
 .card {
