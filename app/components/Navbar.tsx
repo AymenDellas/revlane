@@ -14,7 +14,7 @@ const Navbar = () => {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className="sticky top-3 py-4 z-50"
       >
-        <div className="w-[90%] flex items-center  justify-between bg-zinc-900 border border-white/10 lg:w-[85%] 2xl:w-[60%] rounded-lg mx-auto  px-6 py-2">
+        <div className="w-[90%] flex items-center  justify-between bg-primary  lg:w-[85%] 2xl:w-[60%] rounded-lg mx-auto  px-6 py-2">
           <div className=" flex items-center justify-between w-full">
             <img src="/revlane.png" alt="logo" className="w-8" />
             <ul className="max-lg:hidden lg:flex items-center space-x-6 ">
@@ -68,7 +68,7 @@ const Navbar = () => {
                 onClick={() => setActiveIndex(1)}
                 className=" w-fit relative group px-4 py-2 rounded-lg bg-gradient-to-tr from-subtle to-accent overflow-hidden"
               >
-                Start your project
+                Boost My Demo Bookings
                 <span className="absolute bg-black/20 inset-0 opacity-0 group-hover:opacity-100  ease-out duration-300" />
               </a>
               <a
@@ -76,7 +76,7 @@ const Navbar = () => {
                 onClick={() => setActiveIndex(2)}
                 className=" w-fit  bg-zinc-800 border border-white/10 rounded-lg px-4 py-2 hover:border-white/30 hover:bg-zinc-800/50 transition-colors ease-out duration-100"
               >
-                Get Free Audit
+                Audit my landing page
               </a>
             </div>
           </div>
@@ -143,7 +143,7 @@ const Navbar = () => {
                     onClick={() => setActiveIndex(1)}
                     className=" w-full text-center relative group px-4 py-2 rounded-lg bg-gradient-to-tr from-subtle to-accent overflow-hidden"
                   >
-                    Start your project
+                    Boost My Demo Bookings
                     <span className="absolute bg-black/20 inset-0 opacity-0 group-hover:opacity-100  ease-out duration-300" />
                   </a>
                   <a
@@ -151,7 +151,7 @@ const Navbar = () => {
                     onClick={() => setActiveIndex(2)}
                     className=" w-full text-center  bg-zinc-800 border border-white/10 rounded-lg px-4 py-2 hover:border-white/30 hover:bg-zinc-800/90 transition-colors ease-out duration-100"
                   >
-                    Get Free Audit
+                    Audit my landing page
                   </a>
                 </div>
               </ul>

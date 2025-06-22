@@ -30,51 +30,44 @@ const Process = () => {
 
   const processSteps = [
     {
-      title: "Fill Out the Quick Questionnaire",
+      title: "Discovery Call",
       description:
-        "Before anything starts, you'll complete a form to help us understand your business, target audience, goals, and what you expect from the landing page. This information helps set clear expectations and ensures we're aligned from the start.",
-      icon: FileText,
+        "We kick things off with a quick call to understand your product, users, and goals. This sets the foundation for everything we build.",
+      icon: Phone,
       color: "from-purple-500 to-indigo-600",
     },
     {
-      title: "Book a Discovery Call",
+      title: "Messaging Breakdown",
       description:
-        "Once we receive your form, We'll get back to you with a scheduling link. We'll hop on a quick 30-45 minute call to dig deeper into your answers, align on expectations, and establish a solid foundation for our project partnership.",
-      icon: Phone,
+        "We dig into your sales calls, user questions, and objections to extract the core angles that drive action.",
+      icon: FileText,
       color: "from-blue-500 to-sky-400",
     },
     {
-      title: "Receive a Custom Proposal & Contract",
+      title: "Conversion-optimized Copy",
       description:
-        "After our call, We'll send a proposal tailored to your specific needs. It includes the project scope, timeline, pricing, and deliverables. The contract clearly defines revision policies, payment terms, and can be signed electronically for convenience.",
-      icon: FileEdit,
+        "We write conversion-first copy using proven frameworks like PAS and AIDA—focused on clarity, value, and urgency.",
+      icon: PenTool,
       color: "from-emerald-500 to-teal-400",
     },
     {
-      title: "50% Upfront Payment",
+      title: "Clean UX/UI Design",
       description:
-        "To secure your spot in our project queue and kickstart the work, a 50% upfront payment is required. This makes our partnership official and allows us to set up project management tools to keep everything organized and transparent throughout.",
-      icon: CreditCard,
-      color: "from-pink-500 to-rose-400",
-    },
-    {
-      title: "Design & Development",
-      description:
-        "We'll design concepts based on your brand and objectives, followed by development with clean, optimized code ensuring fast loading times. You'll receive regular updates throughout this phase so you're always informed on progress.",
+        "Design built to guide the eye. Mobile-first, frictionless, and focused on one goal: more booked demos.",
       icon: Palette,
       color: "from-amber-500 to-orange-400",
     },
     {
-      title: "Revisions & Final Edits",
+      title: "Revisions",
       description:
-        "You'll review the draft landing page and provide any feedback for revisions. We'll implement your requested changes. This collaborative refinement process ensures the final result matches your vision perfectly.",
-      icon: PenTool,
+        "You get to review and send feedback. We run tight iterations until the final result hits the mark.",
+      icon: FileEdit,
       color: "from-red-500 to-rose-400",
     },
     {
-      title: "Launch & Support",
+      title: "Delivery & Launch",
       description:
-        "After final payment, We'll deploy your landing page to your hosting environment. You'll receive comprehensive documentation and technical support for 14 days post-launch, with optional maintenance services available if you need ongoing assistance.",
+        "Once approved, we ship clean code, deploy to your host, and support your team for 14 days post-launch.",
       icon: Rocket,
       color: "from-green-500 to-emerald-400",
     },

@@ -401,7 +401,7 @@ const Contact = () => {
                 activeIndex === 1 ? "text-accent font-medium" : ""
               }`}
             >
-              Start your project
+              Boost My Demo Bookings
               {activeIndex === 1 && (
                 <span className="absolute w-full left-0 -bottom-2 h-0.5 rounded-full bg-accent" />
               )}
@@ -417,7 +417,7 @@ const Contact = () => {
                 activeIndex === 2 ? "text-accent font-medium" : ""
               }`}
             >
-              Get free audit
+              Audit my landing page
               {activeIndex === 2 && (
                 <span className="absolute w-full left-0 -bottom-2 h-0.5 rounded-full bg-accent" />
               )}

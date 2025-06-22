@@ -83,32 +83,13 @@ const Footer = () => {
                 <a href="#home">Home</a>
               </li>
               <li className="text-zinc-400 hover:text-accent transition-colors duration-200">
-                <a href="#services">Services</a>
+                <a href="#whychoose">Why choose us</a>
               </li>
               <li className="text-zinc-400 hover:text-accent transition-colors duration-200">
                 <a href="#case_studies">Case Studies</a>
               </li>
               <li className="text-zinc-400 hover:text-accent transition-colors duration-200">
                 <a href="#contact">Contact</a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="font-bold text-lg mb-4">Services</h3>
-            <ul className="space-y-3">
-              <li className="text-zinc-400 hover:text-accent transition-colors duration-200">
-                <a href="#services">Custom Landing Pages</a>
-              </li>
-              <li className="text-zinc-400 hover:text-accent transition-colors duration-200">
-                <a href="#services">Conversion Optimization</a>
-              </li>
-              <li className="text-zinc-400 hover:text-accent transition-colors duration-200">
-                <a href="#services">Performance Tuning</a>
-              </li>
-              <li className="text-zinc-400 hover:text-accent transition-colors duration-200">
-                <a href="#services">Analytics Integration</a>
               </li>
             </ul>
           </div>

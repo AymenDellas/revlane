@@ -77,8 +77,8 @@ const CaseStudies = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.2 }}
                 onClick={() => setActiveTab(index)}
-                className={`flex items-center justify-between p-4 rounded-lg  backdrop-blur-lg border border-subtle/40 cursor-pointer hover:bg-black/40 transition-colors duration-300 ease-out ${
-                  activeTab === index ? "bg-black/20" : "bg-black/5"
+                className={`flex  items-center justify-between p-4 rounded-lg  backdrop-blur-lg border border-subtle/40 cursor-pointer hover:bg-black/40 transition-colors duration-300 ease-out ${
+                  activeTab === index ? "bg-black/20" : "bg-primary"
                 }`}
               >
                 <div className="flex flex-col space-y-2">
@@ -99,7 +99,7 @@ const CaseStudies = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-black/20 backdrop-blur-2xl border border-subtle/40 rounded-lg overflow-hidden lg:w-2/3 space-y-4 "
+          className="bg-primary backdrop-blur-2xl border border-subtle/40 rounded-lg overflow-hidden lg:w-2/3 space-y-4 "
         >
           <div className="relative h-96 w-full overflow-hidden">
             <img

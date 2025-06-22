@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import Process from "./components/Process";
 import FAQ from "./components/FAQ";
 import Head from "next/head";
+import Comparison from "./components/Comparision";
 const page = () => {
   return (
     <>
@@ -51,7 +52,8 @@ const page = () => {
       </Head>
       <Navbar />
       <Hero />
-      <Services />
+      <Comparison />
+
       <Process />
       <CaseStudies />
       <FAQ />

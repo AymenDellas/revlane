@@ -24,11 +24,10 @@ const Hero = () => {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className=" max-sm:text-4xl text-6xl font-bold text-center"
         >
+          Stop Letting Your Landing Page Leak Sales{" "}
           <span className="relative  text-center text-transparent bg-clip-text bg-gradient-to-b from-accent  to-subtle">
-            Conversion Optimized
+            Demo Leads
           </span>
-          <br />
-          Landing Pages
         </motion.h1>
         <motion.p
           initial={{ y: 10 }}
@@ -36,10 +35,9 @@ const Hero = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="text-lg text-zinc-300 text-center"
         >
-          We design and build landing pages with one purpose—
-          <b className="font-bold">conversion</b>. <br /> Each page is
-          structured to guide users, communicate your offer clearly, and drive
-          action.
+          Specialized landing pages built exclusively for VC-backed Sales SaaS
+          teams - engineered to capture high-intent demos and accelerate
+          pipeline velocity.
         </motion.p>
         <motion.div
           initial={{ y: 15 }}
@@ -53,14 +51,14 @@ const Hero = () => {
             className="relative group px-8 py-4 rounded-full bg-gradient-to-tr from-subtle to-accent overflow-hidden"
           >
             <span className="absolute bg-black/20 inset-0 opacity-0 group-hover:opacity-100  ease-out duration-300" />
-            <p>Start Your Project</p>
+            <p>Boost My Demo Bookings</p>
           </a>
           <a
             onClick={() => setActiveIndex(2)}
             href="#contact"
             className="relative group px-8 py-4 rounded-full bg-black/20 backdrop-blur-lg border border-subtle/50 overflow-hidden hover:bg-black/40 ease-out duration-300  "
           >
-            Get Free Audit
+            Audit my landing page
           </a>
         </motion.div>
       </div>
