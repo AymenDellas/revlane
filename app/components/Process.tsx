@@ -1,292 +1,261 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import SectionHeader from "./SectionHeader";
-import {
-  FileText,
-  Phone,
-  FileEdit,
-  CreditCard,
-  Palette,
-  PenTool,
-  Rocket,
-  ArrowLeft,
-  ArrowRight,
-  Check,
-} from "lucide-react";
+import React, { useState } from "react";
+import { ArrowRight, CheckCircle, Clock } from "lucide-react";
+import SectionHeading from "./SectionHeader";
 import { motion } from "motion/react";
-const Process = () => {
-  const [activeStep, setActiveStep] = useState(0);
-  const [animating, setAnimating] = useState(false);
 
-  // Auto-scrolling effect when on mobile
-  useEffect(() => {
-    if (typeof window !== "undefined" && window.innerWidth < 1024) {
-      const element = document.getElementById(`step-${activeStep}`);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      }
-    }
-  }, [activeStep]);
+const ProcessSection = () => {
+  const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
-  const processSteps = [
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeIn", // Using a predefined easing function
+      },
+    },
+  };
+
+  const steps = [
     {
+      id: 1,
       title: "Discovery Call",
+      subtitle: "Define traffic, audience, and goals",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-6 h-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+          />
+        </svg>
+      ),
+      duration: "30 min",
+      outcome: "Clear strategy brief with conversion goals",
       description:
-        "We kick things off with a quick call to understand your product, users, and goals. This sets the foundation for everything we build.",
-      icon: Phone,
-      color: "from-purple-500 to-indigo-600",
+        "We dive deep into your current funnel, target audience, and business goals to create a conversion-focused strategy.",
     },
     {
-      title: "Messaging Breakdown",
+      id: 2,
+      title: "Strategy & Positioning",
+      subtitle: "Lock in your message and UX",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-6 h-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+          />
+        </svg>
+      ),
+      duration: "2-3 days",
+      outcome: "Buyer psychology framework and messaging hierarchy",
       description:
-        "We dig into your sales calls, user questions, and objections to extract the core angles that drive action.",
-      icon: FileText,
-      color: "from-blue-500 to-sky-400",
+        "We craft your positioning using buyer psychology principles that resonate with your ideal customers.",
     },
     {
-      title: "Conversion-optimized Copy",
+      id: 3,
+      title: "Wireframes + Copy",
+      subtitle: "Built to convert, not just look pretty",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-6 h-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+          />
+        </svg>
+      ),
+      duration: "3-4 days",
+      outcome: "Conversion-focused wireframes with psychology-backed copy",
       description:
-        "We write conversion-first copy using proven frameworks like PAS and AIDA—focused on clarity, value, and urgency.",
-      icon: PenTool,
-      color: "from-emerald-500 to-teal-400",
+        "Every element is strategically placed to guide visitors toward your conversion goal with compelling copy.",
     },
     {
-      title: "Clean UX/UI Design",
+      id: 4,
+      title: "High-Fidelity Design",
+      subtitle: "Modern, premium, on-brand",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-6 h-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+          />
+        </svg>
+      ),
+      duration: "4-5 days",
+      outcome: "Pixel-perfect designs that build trust and drive action",
       description:
-        "Design built to guide the eye. Mobile-first, frictionless, and focused on one goal: more booked demos.",
-      icon: Palette,
-      color: "from-amber-500 to-orange-400",
+        "We create stunning, professional designs that build trust and credibility with your prospects.",
     },
     {
-      title: "Revisions",
+      id: 5,
+      title: "Launch + Optimize",
+      subtitle: "Track, tweak, and scale",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-6 h-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M13 10V3L4 14h7v7l9-11h-7z"
+          />
+        </svg>
+      ),
+      duration: "Ongoing",
+      outcome: "Live page with analytics and optimization recommendations",
       description:
-        "You get to review and send feedback. We run tight iterations until the final result hits the mark.",
-      icon: FileEdit,
-      color: "from-red-500 to-rose-400",
-    },
-    {
-      title: "Delivery & Launch",
-      description:
-        "Once approved, we ship clean code, deploy to your host, and support your team for 14 days post-launch.",
-      icon: Rocket,
-      color: "from-green-500 to-emerald-400",
+        "We launch your page and provide ongoing optimization recommendations to maximize performance.",
     },
   ];
 
-  const handleStepChange = (direction: string) => {
-    setAnimating(true);
-
-    if (direction === "next") {
-      setActiveStep(Math.min(processSteps.length - 1, activeStep + 1));
-    } else {
-      setActiveStep(Math.max(0, activeStep - 1));
-    }
-
-    setTimeout(() => setAnimating(false), 300);
-  };
-
   return (
-    <section id="process" className="relative w-[92%] lg:w-[80%] mx-auto py-24">
-      <div className="absolute h-full w-full right-0 rounded-full bg-gradient-to-r from-accent via-accent to-subtle -z-10 opacity-10 blur-3xl" />
-      <div className="absolute inset-0 bg-grid-pattern opacity-5 -z-10" />
+    <section className="w-full max-w-7xl mx-auto px-6 py-24">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={container}
+        className="text-center mb-20"
       >
-        <SectionHeader
-          title="Our Process"
-          subtitle="From initial discovery to final delivery, our step-by-step process ensures clarity, quality, and results—without unnecessary delays."
+        <SectionHeading
+          title="Our 5-Step Conversion Framework."
+          subtitle="From audit to launch, here's how we transform underperforming pages."
         />
       </motion.div>
 
-      <div className="relative flex flex-col lg:flex-row gap-10">
-        {/* Process Timeline Navigation */}
-        <div className="lg:w-1/3 relative">
-          <div className="sticky top-8 space-y-1">
-            {processSteps.map((step, i) => {
-              const Icon = step.icon;
-              const isComplete = i < activeStep;
-              const isActive = activeStep === i;
+      <motion.div
+        className="relative"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={container}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {steps.map((step) => (
+            <motion.div
+              key={step.id}
+              variants={item}
+              className="relative bg-white rounded-2xl border-2 border-surface p-8 transition-all duration-300 hover:shadow-xl hover:border-primary/50 group cursor-pointer"
+              onMouseEnter={() => setHoveredStep(step.id)}
+              onMouseLeave={() => setHoveredStep(null)}
+            >
+              <div className="absolute -top-4 -left-4 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold shadow-md">
+                {step.id}
+              </div>
 
-              return (
-                <motion.div
-                  id={`step-${i}`}
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                  onClick={() => setActiveStep(i)}
-                  className={`flex items-center space-x-4 p-4 rounded-xl transition-all duration-300 cursor-pointer group
-                    ${
-                      isActive
-                        ? "bg-black/40 backdrop-blur-lg border border-subtle/40 shadow-lg shadow-accent/10"
-                        : "hover:bg-black/20 border border-transparent"
-                    }`}
-                >
-                  <div className={`relative flex items-center justify-center`}>
-                    <div
-                      className={`absolute inset-0 rounded-full opacity-${
-                        isActive ? "30" : "20"
-                      } bg-gradient-to-br ${step.color}`}
-                    />
-                    <div
-                      className={`flex items-center justify-center h-9 w-9 rounded-full ${
-                        isComplete
-                          ? `bg-gradient-to-br ${step.color} text-white`
-                          : isActive
-                          ? "bg-black/70 ring-2 ring-accent"
-                          : "bg-black/50"
-                      } z-10 transition-all duration-300`}
-                    >
-                      {isComplete ? (
-                        <Check size={16} className="text-white" />
-                      ) : (
-                        <span className="text-white font-bold text-sm">
-                          {i + 1}
-                        </span>
-                      )}
-                    </div>
-                    {i < processSteps.length - 1 && (
-                      <div
-                        className={`absolute w-0.5 h-14 top-9 left-4 -ml-px bg-gradient-to-b transition-all duration-500 ${
-                          i < activeStep
-                            ? `${step.color} opacity-70`
-                            : "from-zinc-700 to-zinc-800"
-                        }`}
-                      />
-                    )}
-                  </div>
-                  <div className="flex flex-col">
-                    <span
-                      className={`font-medium transition-colors ${
-                        isActive
-                          ? "text-white"
-                          : isComplete
-                          ? "text-zinc-200"
-                          : "text-zinc-400"
-                      } group-hover:text-zinc-200`}
-                    >
-                      {step.title}
-                    </span>
-                    <span
-                      className={`text-xs text-zinc-500 transition-all duration-300 ${
-                        isActive
-                          ? "opacity-100"
-                          : "opacity-0 lg:group-hover:opacity-100"
-                      }`}
-                    >
-                      {isComplete
-                        ? "Completed"
-                        : isActive
-                        ? "Current step"
-                        : "Coming up"}
-                    </span>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+              <div className="w-16 h-16 rounded-2xl bg-surface flex items-center justify-center mb-6">
+                {step.icon}
+              </div>
+
+              <div className="mb-6">
+                <h3 className="text-xl font-playfair font-bold text-dark mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-zinc-600 font-poppins mb-4">
+                  {step.subtitle}
+                </p>
+                <p className="text-sm text-zinc-700 font-poppins leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2 mb-4">
+                <Clock className="w-4 h-4 text-primary" />
+                <span className="text-sm font-poppins font-medium text-primary">
+                  {step.duration}
+                </span>
+              </div>
+
+              <div className="p-4 bg-background/50 rounded-lg border border-primary/20">
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                  <p className="text-sm text-zinc-700 font-poppins">
+                    <span className="font-semibold">Outcome:</span>{" "}
+                    {step.outcome}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
+      </motion.div>
 
-        {/* Process Details Panel */}
-        <motion.div
+      <div className="text-center mt-16">
+        <motion.button
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="lg:w-2/3"
+          className="group px-8 py-4 bg-primary hover:bg-primary/90 text-background font-poppins font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center gap-2 mx-auto"
         >
-          <div
-            className={`bg-black/20 backdrop-blur-lg border border-subtle/40 rounded-xl p-8 relative overflow-hidden shadow-xl transition-opacity duration-300 ${
-              animating ? "opacity-50" : "opacity-100"
-            }`}
-          >
-            {/* Grid background */}
-            <div
-              className="absolute inset-0 opacity-20 -z-10"
-              style={{
-                backgroundImage:
-                  "linear-gradient(to right, #2a2a2a 1px, transparent 1px), linear-gradient(to bottom, #2a2a2a 1px, transparent 1px)",
-                backgroundSize: "40px 40px",
-                backgroundPosition: "0 0",
-              }}
-            />
+          <span>Start Your Project Today</span>
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </motion.button>
 
-            {/* Glowing accent dots */}
-            <div className="absolute top-0 right-0 h-24 w-24 bg-accent opacity-10 rounded-full blur-2xl -mr-6 -mt-6"></div>
-            <div className="absolute bottom-0 left-0 h-16 w-16 bg-accent opacity-10 rounded-full blur-2xl -ml-4 -mb-4"></div>
-
-            <div className="relative z-10">
-              <div className="flex items-center space-x-4 mb-6">
-                <div
-                  className={`text-white bg-gradient-to-br ${processSteps[activeStep].color} p-3 rounded-lg shadow-lg`}
-                >
-                  {React.createElement(processSteps[activeStep].icon, {
-                    size: 24,
-                  })}
-                </div>
-                <h3 className="text-2xl font-bold">
-                  Step {activeStep + 1}: {processSteps[activeStep].title}
-                </h3>
-              </div>
-
-              <p className="text-lg text-zinc-300 leading-relaxed mb-8">
-                {processSteps[activeStep].description}
-              </p>
-
-              {/* Progress indicator */}
-              <div className="mb-8 mt-10">
-                <div className="flex justify-between mb-2 text-xs text-zinc-500">
-                  <span>
-                    Step {activeStep + 1} of {processSteps.length}
-                  </span>
-                  <span>
-                    {Math.round((activeStep / (processSteps.length - 1)) * 100)}
-                    % Complete
-                  </span>
-                </div>
-                <div className="h-1.5 w-full bg-black/30 rounded-full overflow-hidden">
-                  <div
-                    className={`h-full bg-gradient-to-r ${processSteps[activeStep].color} transition-all duration-700 ease-out`}
-                    style={{
-                      width: `${
-                        (activeStep / (processSteps.length - 1)) * 100
-                      }%`,
-                    }}
-                  ></div>
-                </div>
-              </div>
-
-              <div className="pt-4 flex justify-between">
-                <button
-                  onClick={() => handleStepChange("prev")}
-                  disabled={activeStep === 0}
-                  className={`px-4 py-2 rounded-lg border border-subtle/40 transition-colors flex items-center gap-2 ${
-                    activeStep === 0
-                      ? "opacity-50 cursor-not-allowed"
-                      : "hover:bg-black/40"
-                  }`}
-                >
-                  <ArrowLeft size={16} />
-                  Previous Step
-                </button>
-                <button
-                  onClick={() => handleStepChange("next")}
-                  disabled={activeStep === processSteps.length - 1}
-                  className={`px-4 py-2 rounded-lg flex items-center gap-2 transition-all duration-300 ${
-                    activeStep === processSteps.length - 1
-                      ? "opacity-50 cursor-not-allowed bg-accent/60"
-                      : "bg-accent hover:bg-accent/90 shadow-lg shadow-accent/20 hover:shadow-accent/30"
-                  }`}
-                >
-                  Next Step
-                  <ArrowRight size={16} />
-                </button>
-              </div>
-            </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="flex flex-wrap justify-center gap-4 mt-6 text-zinc-600 text-sm font-poppins"
+        >
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-primary rounded-full"></div>
+            <span>No setup fees</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-primary rounded-full"></div>
+            <span>Fast turnaround</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-primary rounded-full"></div>
+            <span>Proven results</span>
           </div>
         </motion.div>
       </div>
@@ -294,4 +263,4 @@ const Process = () => {
   );
 };
 
-export default Process;
+export default ProcessSection;

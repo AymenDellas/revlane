@@ -1,64 +1,24 @@
 @import "tailwindcss";
 @theme {
-  --color-primary: #121118;
-  --color-accent: #5a4c8a;
-  --color-secondary: #1c1824;
-  --color-text: #f3f2f7;
-  --color-subtle: #a59fc1;
-  --color-highlight: #7d6bd9;
-  --color-border: #2d293b;
-  --color-bg-light: #191622;
-  --animate-spin: spin 4s linear infinite;
-  @keyframes spin {
-    from {
-      --angle: 0deg;
-    }
-    to {
-      --angle: 360deg;
-    }
-  }
-}
+  /* Warm Neutral Color Palette */
+  --color-primary: #a8965f; /* More vibrant olive */
+  --color-secondary: #d5c7a3;
+  --color-tertiary: #f2e2b1;
+  --color-accent: #f6f0f0;
+  --color-dark: #1e1c16; /* New dark shade */
 
-html {
-  background-color: var(--color-primary);
-  color: white;
-}
+  /* Semantic color assignments */
+  --color-background: #f6f0f0;
+  --color-surface: #f2e2b1;
+  --color-surface-variant: #d5c7a3;
+  --color-text-primary: #bdb395;
+  --color-text-secondary: #d5c7a3;
+  --color-border: #f2e2b1;
+  --color-hover: #d5c7a3;
+  --color-active: #bdb395;
 
-.card {
-  font-size: larger;
-  padding-inline: 25px;
-  padding-block: 15px;
-  background-color: var(--color-accent);
-  border-radius: 40px;
-  position: relative;
-}
+  /* Additional utilities */
 
-@property --angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
-.card::after,
-.card::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  padding-block: 32px;
-  padding-inline: 110px;
-  border-radius: 40px;
-  background-image: conic-gradient(
-    from var(--angle),
-    transparent 40%,
-    var(--color-subtle)
-  );
-  animation: var(--animate-spin);
-}
-.card::before {
-  filter: blur(15px);
+  --font-playfair: "Playfair Display", serif;
+  --font-poppins: "Poppins", sans-serif;
 }

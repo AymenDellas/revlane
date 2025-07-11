@@ -1,166 +1,181 @@
 "use client";
-import { useActiveIndex } from "@/lib/store";
-import { Menu, X } from "lucide-react";
 import React, { useState } from "react";
+import { X, ArrowRight, Phone, Mail, MapPin } from "lucide-react";
 import { motion } from "motion/react";
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const { activeIndex, setActiveIndex } = useActiveIndex();
+
+const FullscreenNavbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    if (!isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  };
+
+  const menuItems = [
+    { title: "Process", subtitle: "How we transform your funnel" },
+    { title: "Case Studies", subtitle: "Real results from real clients" },
+    { title: "About", subtitle: "Meet the conversion experts" },
+    { title: "Pricing", subtitle: "Transparent, results-based pricing" },
+  ];
+
   return (
     <>
-      <motion.nav
-        initial={{ y: 10, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className="sticky top-3 py-4 z-50"
+      <motion.button
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+        onClick={toggleMenu}
+        className="fixed top-6 right-6 w-12 h-12 bg-white/90 backdrop-blur-xl shadow-lg border border-zinc-200 rounded-full transition-all z-50 hover:scale-105 group"
+        style={{
+          boxShadow:
+            "0 10px 30px rgba(0,0,0,0.1), 0 0 0 1px rgba(255,255,255,0.1) inset",
+        }}
       >
-        <div className="w-[90%] flex items-center  justify-between bg-primary  lg:w-[85%] 2xl:w-[60%] rounded-lg mx-auto  px-6 py-2">
-          <div className=" flex items-center justify-between w-full">
-            <img src="/revlane.png" alt="logo" className="w-8" />
-            <ul className="max-lg:hidden lg:flex items-center space-x-6 ">
-              <li className="relative group ">
-                <a
-                  href="#home"
-                  className="group-hover:text-subtle transition-colors duration-200 ease-out"
-                >
-                  Home
-                </a>
-              </li>
-              <li className="relative group">
-                <a
-                  href="#services"
-                  className="group-hover:text-subtle transition-colors duration-200 ease-out"
-                >
-                  Services
-                </a>
-              </li>
-              <li className="relative group">
-                <a
-                  href="#process"
-                  className="group-hover:text-subtle transition-colors duration-200 ease-out"
-                >
-                  Process
-                </a>
-              </li>
-              <li className="relative group">
-                <a
-                  href="#case_studies"
-                  className="group-hover:text-subtle transition-colors duration-200 ease-out"
-                >
-                  Case Studies
-                </a>
-              </li>
-              <li className="relative group">
-                <a
-                  href="#faq"
-                  className="group-hover:text-subtle transition-colors duration-200 ease-out"
-                >
-                  Faq
-                </a>
-              </li>
-            </ul>
-            <span onClick={() => setIsOpen(true)} className="lg:hidden">
-              <Menu />
-            </span>
-            <div className="max-lg:hidden lg:flex items-center space-x-2">
-              <a
-                href="#contact"
-                onClick={() => setActiveIndex(1)}
-                className=" w-fit relative group px-4 py-2 rounded-lg bg-gradient-to-tr from-subtle to-accent overflow-hidden"
-              >
-                Boost My Demo Bookings
-                <span className="absolute bg-black/20 inset-0 opacity-0 group-hover:opacity-100  ease-out duration-300" />
-              </a>
-              <a
-                href="#contact"
-                onClick={() => setActiveIndex(2)}
-                className=" w-fit  bg-zinc-800 border border-white/10 rounded-lg px-4 py-2 hover:border-white/30 hover:bg-zinc-800/50 transition-colors ease-out duration-100"
-              >
-                Audit my landing page
-              </a>
+        {isMenuOpen ? (
+          <X className="w-5 h-5 text-zinc-700 mx-auto" />
+        ) : (
+          <div className="relative w-full h-full flex items-center justify-center">
+            <div className="space-y-1.5">
+              <div className="w-6 h-0.5 bg-zinc-800 rounded-full transform transition-all duration-300 group-hover:w-7 group-hover:bg-zinc-900"></div>
+              <div className="w-4 h-0.5 bg-zinc-600 rounded-full transform transition-all duration-300 delay-75 group-hover:w-7 group-hover:bg-zinc-900"></div>
+              <div className="w-5 h-0.5 bg-zinc-700 rounded-full transform transition-all duration-300 delay-150 group-hover:w-7 group-hover:bg-zinc-900"></div>
             </div>
           </div>
-        </div>
-        {isOpen && (
-          <>
-            <div
-              onClick={() => setIsOpen(false)}
-              className={`lg:hidden  absolute z-50 inset-0 -top-4  bg-zinc-950/50 backdrop-blur-2xl w-screen h-dvh mx-auto     p-4 space-y-8 `}
-            >
-              <span className="w-full h-full absolute inset-0 bg-black/10 -z-10" />
-              <div className="flex  items-center justify-between mx-2">
-                <img src="/revlane.png" alt="logo" className="w-8" />
-                <X
-                  color="white"
-                  className=""
-                  onClick={() => setIsOpen(false)}
-                />
-              </div>
-              <ul className="lg:hidden flex flex-col items-center justify-center h-1/2 space-y-6 text-xl">
-                <li>
-                  <a
-                    href="#home"
-                    className="hover:text-accent active:text-accent ease-out duration-300"
-                  >
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#services"
-                    className="hover:text-accent active:text-accent ease-out duration-300"
-                  >
-                    Services
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#process"
-                    className="hover:text-accent active:text-accent ease-out duration-300"
-                  >
-                    Process
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#case_studies"
-                    className="hover:text-accent active:text-accent ease-out duration-300"
-                  >
-                    Case Studies
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#faq"
-                    className="hover:text-accent active:text-accent ease-out duration-300"
-                  >
-                    Faq
-                  </a>
-                </li>
-                <div className=" flex flex-col justify-center space-y-2 w-full">
-                  <a
-                    href="#contact"
-                    onClick={() => setActiveIndex(1)}
-                    className=" w-full text-center relative group px-4 py-2 rounded-lg bg-gradient-to-tr from-subtle to-accent overflow-hidden"
-                  >
-                    Boost My Demo Bookings
-                    <span className="absolute bg-black/20 inset-0 opacity-0 group-hover:opacity-100  ease-out duration-300" />
-                  </a>
-                  <a
-                    href="#contact"
-                    onClick={() => setActiveIndex(2)}
-                    className=" w-full text-center  bg-zinc-800 border border-white/10 rounded-lg px-4 py-2 hover:border-white/30 hover:bg-zinc-800/90 transition-colors ease-out duration-100"
-                  >
-                    Audit my landing page
-                  </a>
-                </div>
-              </ul>
-            </div>
-          </>
         )}
-      </motion.nav>
+      </motion.button>
+
+      <motion.div
+        initial={{ opacity: 0, visibility: "hidden" }}
+        animate={isMenuOpen ? "open" : "closed"}
+        variants={{
+          open: { opacity: 1, visibility: "visible" },
+          closed: { opacity: 0, visibility: "hidden" },
+        }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        className="fixed inset-0 bg-zinc-900 z-40"
+        style={{ overflowY: "hidden" }}
+      >
+        <div className="flex h-full">
+          <div className="flex-1 flex flex-col justify-center px-8 md:px-16">
+            <div className="space-y-8">
+              {menuItems.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ x: -50, opacity: 0 }}
+                  animate={
+                    isMenuOpen ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }
+                  }
+                  transition={{
+                    delay: index * 0.1,
+                    duration: 0.6,
+                    ease: "easeOut",
+                  }}
+                >
+                  <a
+                    href="#"
+                    className="group block py-5 transition-colors"
+                    onClick={toggleMenu}
+                  >
+                    <div className="flex items-center space-x-4 py-4 border-b border-zinc-800 group-hover:border-primary transition-all duration-300">
+                      <div className="flex-1">
+                        <h3 className="text-3xl md:text-4xl font-bold text-white group-hover:text-primary transition-colors duration-300">
+                          {item.title}
+                        </h3>
+                        <p className="text-zinc-400 text-lg mt-2 group-hover:text-zinc-300 transition-colors duration-300">
+                          {item.subtitle}
+                        </p>
+                      </div>
+                      <ArrowRight className="w-6 h-6 text-zinc-600 group-hover:text-primary group-hover:translate-x-2 transition-all duration-300" />
+                    </div>
+                  </a>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div
+              initial={{ x: -50, opacity: 0 }}
+              animate={
+                isMenuOpen ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }
+              }
+              transition={{
+                delay: 0.4,
+                duration: 0.6,
+                ease: "easeOut",
+              }}
+              className="mt-12"
+            >
+              <button
+                onClick={toggleMenu}
+                className="group px-8 py-4 bg-primary hover:bg-primary/90 text-white font-bold text-xl rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-3"
+              >
+                <span>Book Your Strategy Call</span>
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </motion.div>
+          </div>
+
+          <div className="hidden lg:flex flex-col justify-center px-16 bg-zinc-800/90 backdrop-blur-md min-w-96">
+            <motion.div
+              initial={{ x: 50, opacity: 0 }}
+              animate={
+                isMenuOpen ? { x: 0, opacity: 1 } : { x: 50, opacity: 0 }
+              }
+              transition={{
+                delay: 0.3,
+                duration: 0.6,
+                ease: "easeOut",
+              }}
+              className="space-y-8"
+            >
+              <div>
+                <h4 className="text-xl font-bold text-white mb-6">
+                  Get in Touch
+                </h4>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <Phone className="w-5 h-5 text-primary" />
+                    <span className="text-zinc-300">+1 (555) 123-4567</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Mail className="w-5 h-5 text-primary" />
+                    <span className="text-zinc-300">hello@revlane.com</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <MapPin className="w-5 h-5 text-primary" />
+                    <span className="text-zinc-300">San Francisco, CA</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-xl font-bold text-white mb-4">
+                  Why Choose Revlane?
+                </h4>
+                <ul className="space-y-3 text-zinc-300">
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
+                    <span>40% lower CAC in 30 days</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
+                    <span>Psychology-backed design</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
+                    <span>No payment until results</span>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </motion.div>
     </>
   );
 };
 
-export default Navbar;
+export default FullscreenNavbar;

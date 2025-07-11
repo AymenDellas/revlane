@@ -1,155 +1,164 @@
 "use client";
 import React from "react";
 import { Check, X } from "lucide-react";
-import SectionHeader from "./SectionHeader";
+import SectionHeading from "./SectionHeader";
 import { motion } from "motion/react";
 
 const Comparison = () => {
-  const comparisonData = [
+  const comparisonPoints = [
     {
-      capability: "Technical Stack Expertise",
-      typical: "Basic WordPress templates",
-      revlane: "Pre-built Salesforce/HubSpot integrations",
-      revlaneAdvantage: true,
+      feature: "Modern, premium, built for conversions",
+      revlane: true,
+      others: false,
     },
     {
-      capability: "VC Metric Alignment",
-      typical: "Generic conversion goals",
-      revlane: "Pipeline velocity & CAC optimization focus",
-      revlaneAdvantage: true,
+      feature: "Psychology-backed, clear, conversion-focused copy",
+      revlane: true,
+      others: false,
     },
     {
-      capability: "Implementation Speed",
-      typical: "4-6 week deployments",
-      revlane: "72-hour MVP launch guarantee",
-      revlaneAdvantage: true,
+      feature: "Single, measurable CTA tied to booked demos",
+      revlane: true,
+      others: false,
     },
     {
-      capability: "Founder Collaboration",
-      typical: "Account manager layers",
-      revlane: "Direct CTO-level access",
-      revlaneAdvantage: true,
+      feature: "Research-driven, structured, proven frameworks",
+      revlane: true,
+      others: false,
     },
     {
-      capability: "Ongoing Optimization",
-      typical: "One-time delivery",
-      revlane: "Quarterly growth sprints",
-      revlaneAdvantage: true,
+      feature: "Clean, fast, production-ready dev handoff",
+      revlane: true,
+      others: false,
     },
     {
-      capability: "Risk Approach",
-      typical: "Fixed-scope contracts",
-      revlane: "Free pilot experiment",
-      revlaneAdvantage: true,
+      feature: "One focused message tied to ROI and CAC",
+      revlane: true,
+      others: false,
     },
   ];
 
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
-    <section id="whychoose" className="relative py-20">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-      >
-        <SectionHeader
-          title="Why Choose Revlane"
-          subtitle="See how we stack up against typical agencies—built specifically for VC-backed SaaS teams"
+    <section className="w-full max-w-7xl mx-auto px-6 py-16">
+      <div className="text-center mb-20">
+        <SectionHeading
+          title="Why Revlane Beats Generic Agencies."
+          subtitle="We blend premium design and conversion science, where others just chase trends."
         />
-      </motion.div>
+      </div>
 
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="w-[90%] lg:w-[80%] mx-auto"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={container}
+        className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100"
       >
-        <div className="bg-black/80 rounded-xl overflow-hidden border border-zinc-800 relative">
-          {/* Grid background */}
-          <div
-            className="absolute inset-0 opacity-40"
-            style={{
-              backgroundImage:
-                "linear-gradient(to right, #2a2a2a 1px, transparent 1px), linear-gradient(to bottom, #2a2a2a 1px, transparent 1px)",
-              backgroundSize: "40px 40px",
-              backgroundPosition: "0 0",
-            }}
-          />
-
-          {/* Gradient overlays */}
-          <span className="absolute w-80 h-80 bg-gradient-to-br from-accent/20 to-subtle/20 blur-3xl -top-20 -right-20 opacity-60" />
-          <span className="absolute w-80 h-80 bg-gradient-to-tl from-subtle/20 to-accent/20 blur-3xl -bottom-20 -left-20 opacity-60" />
-
-          {/* Table Header */}
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 border-b border-zinc-700">
-            <div className="p-6 font-bold text-lg text-center border-b md:border-b-0 md:border-r border-zinc-700">
-              Capability
-            </div>
-            <div className="p-6 font-bold text-lg text-center border-b md:border-b-0 md:border-r border-zinc-700">
-              Typical Agencies
-            </div>
-            <div className="p-6 font-bold text-lg text-center bg-accent/10">
-              Revlane
+        {/* Header */}
+        <motion.div
+          variants={item}
+          className="grid grid-cols-2 bg-gray-50 border-b border-gray-200"
+        >
+          <div className="p-6 text-center bg-primary text-zinc-800 shadow-lg transform scale-105 z-10 relative w-full flex items-center justify-center">
+            <div className="w-26">
+              {/* Using the image as in original code */}
+              <motion.img
+                src="/evlane.png"
+                alt="Revlane Logo"
+                className=""
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{
+                  delay: 0.2,
+                  type: "spring",
+                  stiffness: 300,
+                }}
+              />
             </div>
           </div>
-
-          {/* Table Rows */}
-          {comparisonData.map((row, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative z-10 grid grid-cols-1 md:grid-cols-3 ${
-                index !== comparisonData.length - 1
-                  ? "border-b border-zinc-700"
-                  : ""
-              }`}
+          <div className="p-6 text-center border-l border-gray-200 flex items-center justify-center">
+            <motion.span
+              className="font-semibold text-gray-600"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
             >
-              {/* Capability */}
-              <div className="p-6 font-medium text-center md:text-left border-b md:border-b-0 md:border-r border-zinc-700">
-                {row.capability}
-              </div>
-
-              {/* Typical Agencies */}
-              <div className="p-6 text-center md:text-left border-b md:border-b-0 md:border-r border-zinc-700">
-                <div className="flex items-center justify-center md:justify-start space-x-3">
-                  <X className="w-5 h-5 text-red-400 flex-shrink-0" />
-                  <span className="text-zinc-400">{row.typical}</span>
-                </div>
-              </div>
-
-              {/* Revlane */}
-              <div className="p-6 text-center md:text-left bg-accent/5">
-                <div className="flex items-center justify-center md:justify-start space-x-3">
-                  <Check className="w-5 h-5 text-accent flex-shrink-0" />
-                  <span className="text-white font-medium">{row.revlane}</span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="text-center mt-8"
-        >
-          <p className="text-zinc-400 mb-6">
-            Ready to experience the Revlane difference?
-          </p>
-          <a
-            href="#contact"
-            className="inline-flex items-center px-8 py-4 rounded-full bg-gradient-to-tr from-subtle to-accent text-white font-medium hover:shadow-lg hover:shadow-accent/25 transition-all duration-300"
-          >
-            Start Your Free Pilot
-          </a>
+              Other Agencies
+            </motion.span>
+          </div>
         </motion.div>
+
+        {/* Comparison Rows */}
+        {comparisonPoints.map((point, i) => (
+          <motion.div
+            key={i}
+            variants={item}
+            className="grid grid-cols-2 border-b border-gray-100 last:border-b-0 hover:bg-gray-50 transition-colors duration-200"
+            whileHover={{ backgroundColor: "#f9fafb" }}
+          >
+            <div className="p-6 border-r border-gray-100 bg-tertiary shadow-sm transform scale-105 z-10 relative">
+              <div className="flex items-center space-x-2">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{
+                    delay: 0.1,
+                    type: "spring",
+                    stiffness: 500,
+                  }}
+                >
+                  {point.revlane ? (
+                    <Check className="w-5 h-5 text-green-600" />
+                  ) : (
+                    <X className="w-5 h-5 text-red-500" />
+                  )}
+                </motion.div>
+                <span className="font-medium text-zinc-800">
+                  {point.feature}
+                </span>
+              </div>
+            </div>
+            <div className="p-6 flex items-center justify-center">
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{
+                  delay: 0.2,
+                  type: "spring",
+                  stiffness: 500,
+                }}
+              >
+                {point.others ? (
+                  <Check className="w-5 h-5 text-green-600" />
+                ) : (
+                  <X className="w-5 h-5 text-red-500" />
+                )}
+              </motion.div>
+            </div>
+          </motion.div>
+        ))}
       </motion.div>
     </section>
   );

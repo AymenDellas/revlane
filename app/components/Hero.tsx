@@ -1,68 +1,100 @@
 "use client";
 import React from "react";
-import { useActiveIndex } from "@/lib/store";
+import { ArrowRight, Play } from "lucide-react";
 import { motion } from "motion/react";
+
 const Hero = () => {
-  const { activeIndex, setActiveIndex } = useActiveIndex();
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const childVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] }, // Using a valid easing function
+    },
+  };
+
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      id="home"
-      className="relative"
-    >
-      <div className="relative flex flex-col items-center justify-center space-y-8 py-20 text-text w-[90%] lg:w-[60%] mx-auto   lg:py-36 ">
-        <span className="absolute max-lg:w-50 max-lg:h-50 w-96 h-96 bg-accent/40 -z-10 rounded-[80%_10%] blur-3xl max-lg:left-36 left-60"></span>
-        <span className="absolute max-lg:w-50 max-lg:h-50 w-96 h-96 bg-subtle/40 -z-10 rounded-[80%_10%] blur-3xl max-lg:right-36 right-60"></span>
-        <span className="border border-accent bg-accent/10 backdrop-blur-lg rounded-full px-4 py-1 text-accent">
-          Built for short attention spans
-        </span>
-        <motion.h1
-          initial={{ y: 15 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className=" max-sm:text-4xl text-6xl font-bold text-center"
-        >
-          Stop Letting Your Landing Page Leak Sales{" "}
-          <span className="relative  text-center text-transparent bg-clip-text bg-gradient-to-b from-accent  to-subtle">
-            Demo Leads
-          </span>
-        </motion.h1>
-        <motion.p
-          initial={{ y: 10 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="text-lg text-zinc-300 text-center"
-        >
-          Specialized landing pages built exclusively for VC-backed Sales SaaS
-          teams - engineered to capture high-intent demos and accelerate
-          pipeline velocity.
-        </motion.p>
-        <motion.div
-          initial={{ y: 15 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="flex flex-col justify-center  lg:flex-row max-lg:space-y-4 items-center lg:space-x-4"
-        >
-          <a
-            onClick={() => setActiveIndex(1)}
-            href="#contact"
-            className="relative group px-8 py-4 rounded-full bg-gradient-to-tr from-subtle to-accent overflow-hidden"
-          >
-            <span className="absolute bg-black/20 inset-0 opacity-0 group-hover:opacity-100  ease-out duration-300" />
-            <p>Boost My Demo Bookings</p>
-          </a>
-          <a
-            onClick={() => setActiveIndex(2)}
-            href="#contact"
-            className="relative group px-8 py-4 rounded-full bg-black/20 backdrop-blur-lg border border-subtle/50 overflow-hidden hover:bg-black/40 ease-out duration-300  "
-          >
-            Audit my landing page
-          </a>
+    <section className="relative flex flex-col items-center py-40 space-y-6 overflow-hidden bg-background">
+      <motion.div
+        className="relative z-10 flex flex-col items-center space-y-8 max-w-5xl text-center px-4"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div variants={childVariants}>
+          <div className="inline-flex items-center space-x-2 px-5 py-2.5 bg-surface/70 backdrop-blur-sm rounded-full border border-border mb-6">
+            <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+            <span className="text-primary font-poppins font-medium text-[13px] tracking-widest uppercase">
+              Conversion Experts
+            </span>
+          </div>
         </motion.div>
-      </div>
-    </motion.section>
+
+        <motion.h1
+          variants={childVariants}
+          className="text-3xl lg:text-5xl xl:text-[3.7rem] leading-[1.15] font-playfair font-bold text-dark max-w-4xl mb-6 px-4"
+        >
+          Stop Burning Ad Spend.
+          <br className="hidden md:block" />
+          Get <span className="text-primary">Qualified Demos</span> Without
+          Complex Funnels
+        </motion.h1>
+
+        <motion.p
+          variants={childVariants}
+          className="text-lg md:text-xl text-zinc-700 max-w-2xl leading-relaxed mb-10 font-poppins"
+        >
+          We build conversion-optimized, psychologically sharp landing pages to
+          turn your clicks into booked calls, fast.
+        </motion.p>
+
+        <motion.div
+          variants={childVariants}
+          className="flex flex-col sm:flex-row items-center gap-4 mb-12 z-10 relative"
+        >
+          <button className="group px-8 py-3.5 bg-primary hover:bg-primary/90 text-background font-poppins font-medium text-base rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center space-x-2">
+            <span>Book Free Strategy Call</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </button>
+
+          <button className="group px-8 py-3.5 bg-surface hover:bg-surface-variant text-zinc-800 font-poppins font-medium text-base rounded-lg border-2 border-transparent hover:border-primary/30 transition-all duration-300 flex items-center space-x-2">
+            <Play className="w-4 h-4 text-primary" />
+            <span>See Case Studies</span>
+          </button>
+        </motion.div>
+
+        <motion.div
+          variants={childVariants}
+          className="flex flex-col items-center space-y-6 text-center"
+        >
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-zinc-600 text-sm font-poppins">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+              <span>No setup fees</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+              <span>30-day guarantee</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+              <span>Results in 2 weeks</span>
+            </div>
+          </div>
+        </motion.div>
+      </motion.div>
+    </section>
   );
 };
 

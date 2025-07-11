@@ -1,26 +1,27 @@
 import type { Metadata } from "next";
-import { Poppins, Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/Footer";
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playful-display",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+});
 
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Revlane | High-Converting Landing Pages",
   description:
-    "Revlane is a web agency specializing in sleek, high-converting landing pages for startups and global brands.",
+    "Revlane builds landing pages that actually convert. Built for results.",
   metadataBase: new URL("https://revlane.tech"),
   openGraph: {
     title: "Revlane | High-Converting Landing Pages",
@@ -38,6 +39,13 @@ export const metadata: Metadata = {
     ],
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Revlane | High-Converting Landing Pages",
+    description:
+      "Revlane builds landing pages that actually convert. Built for results.",
+    images: ["/revlane.png"],
+  },
 };
 
 export default function RootLayout({
@@ -46,13 +54,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="overflow-x-hidden scroll-smooth">
-      <body
-        className={`${poppins.variable} ${inter.variable} ${poppins.className} antialiased`}
-      >
-        {/* Optional background grid */}
-        {/* <div className="absolute inset-0 -z-10 h-full w-full bg-[radial-gradient(#31313175_2px,transparent_2px)] [background-size:50px_50px]" /> */}
-
+    <html
+      lang="en"
+      className={`overflow-x-hidden scroll-smooth ${playfairDisplay.variable} ${poppins.variable}`}
+    >
+      <body className={`${poppins.className} antialiased`}>
         <main className="min-h-screen">{children}</main>
         <Footer />
       </body>

@@ -1,24 +1,29 @@
+"use client";
 import React from "react";
+import { motion } from "motion/react";
 
-const SectionHeader = ({
-  title,
-  subtitle,
-}: {
+interface SectionHeadingProps {
   title: string;
   subtitle: string;
-}) => {
+}
+
+const SectionHeading: React.FC<SectionHeadingProps> = ({ title, subtitle }) => {
   return (
-    <div className="relative w-[90%] lg:w-[60%] mx-auto text-center mb-16">
-      <div className="flex items-center justify-center mb-3">
-        <div className="h-1 w-6 bg-accent rounded-full"></div>
-        <div className="h-1 w-12 bg-accent/30 rounded-full ml-1"></div>
-      </div>
-
-      <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
-
-      <p className="text-zinc-400 text-lg max-w-2xl mx-auto">{subtitle}</p>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6 }}
+      className="text-center max-w-4xl mx-auto mb-16"
+    >
+      <h2 className="text-4xl md:text-5xl font-bold text-dark mb-4 leading-tight tracking-tight">
+        {title}
+      </h2>
+      <p className="text-lg md:text-xl text-zinc-600 leading-relaxed max-w-3xl mx-auto">
+        {subtitle}
+      </p>
+    </motion.div>
   );
 };
 
-export default SectionHeader;
+export default SectionHeading;

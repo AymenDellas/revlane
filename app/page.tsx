@@ -1,13 +1,13 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Services from "./components/Services";
-import CaseStudies from "./components/CaseStudies";
-import Contact from "./components/Contact";
-import Process from "./components/Process";
-import FAQ from "./components/FAQ";
 import Head from "next/head";
+import Hero from "./components/Hero";
 import Comparison from "./components/Comparision";
+import ProblemSolution from "./components/ProblemSolution";
+import ProcessSection from "./components/Process";
+import CTASection from "./components/CTA";
+import RegularNavbar from "./components/Navbar";
+import FullscreenNavbar from "./components/Navbar";
+import CaseStudiesSection from "./components/CaseStudies";
 const page = () => {
   return (
     <>
@@ -50,14 +50,13 @@ const page = () => {
           }}
         />
       </Head>
-      <Navbar />
+      <FullscreenNavbar />
       <Hero />
+      <ProblemSolution />
+      <CaseStudiesSection />
+      <ProcessSection />
       <Comparison />
-
-      <Process />
-      <CaseStudies />
-      <FAQ />
-      <Contact />
+      <CTASection />
     </>
   );
 };
