@@ -43,7 +43,7 @@ const Hero = () => {
 
         <motion.h1
           variants={childVariants}
-          className="text-3xl lg:text-5xl xl:text-[3.7rem] leading-[1.15] font-playfair font-bold text-dark max-w-4xl mb-6 px-4"
+          className="text-3xl lg:text-5xl xl:text-[3.7rem] leading-[1.15] font-instrumentSerif font-bold text-dark max-w-4xl mb-6 px-4"
         >
           Stop Burning Ad Spend.
           <br className="hidden md:block" />
@@ -53,7 +53,7 @@ const Hero = () => {
 
         <motion.p
           variants={childVariants}
-          className="text-lg md:text-xl text-zinc-700 max-w-2xl leading-relaxed mb-10 font-poppins"
+          className="text-lg md:text-xl text-zinc-700 max-w-2xl leading-relaxed mb-10 font-inter"
         >
           We build conversion-optimized, psychologically sharp landing pages to
           turn your clicks into booked calls, fast.

@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
-import { Playfair_Display } from "next/font/google";
+import {
+  Poppins,
+  Playfair_Display,
+  Instrument_Serif,
+  Inter,
+} from "next/font/google";
 import "./globals.css";
 import Footer from "./components/Footer";
 
@@ -11,10 +15,23 @@ const playfairDisplay = Playfair_Display({
   display: "swap",
 });
 
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+});
+
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
   display: "swap",
 });
 
@@ -56,9 +73,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`overflow-x-hidden scroll-smooth ${playfairDisplay.variable} ${poppins.variable}`}
+      className={`overflow-x-hidden scroll-smooth ${playfairDisplay.variable} ${inter.variable}`}
     >
-      <body className={`${poppins.className} antialiased`}>
+      <body className={`${inter.className} antialiased`}>
         <main className="min-h-screen">{children}</main>
         <Footer />
       </body>
