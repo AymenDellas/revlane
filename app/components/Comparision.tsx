@@ -3,6 +3,7 @@ import React from "react";
 import { Check, X } from "lucide-react";
 import SectionHeading from "./SectionHeader";
 import { motion } from "motion/react";
+import { easeOut } from "motion/react";
 
 const Comparison = () => {
   const comparisonPoints = [
@@ -55,7 +56,7 @@ const Comparison = () => {
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeOut",
+        ease: easeOut, // Changed from "easeOut" string to easeOut function
       },
     },
   };

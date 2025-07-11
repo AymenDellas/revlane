@@ -2,7 +2,7 @@
 import React from "react";
 import { ArrowRight, Play } from "lucide-react";
 import { motion } from "motion/react";
-
+import { easeOut } from "motion/react";
 const Hero = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -20,7 +20,7 @@ const Hero = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] }, // Using a valid easing function
+      transition: { duration: 0.6, ease: easeOut }, // Using a valid easing function
     },
   };
 

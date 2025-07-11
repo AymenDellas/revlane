@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { ArrowRight, CheckCircle, Clock } from "lucide-react";
 import SectionHeading from "./SectionHeader";
 import { motion } from "motion/react";
-
+import { easeIn } from "motion/react";
 const ProcessSection = () => {
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
@@ -23,7 +23,7 @@ const ProcessSection = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: "easeIn", // Using a predefined easing function
+        ease: easeIn, // Using a predefined easing function
       },
     },
   };
