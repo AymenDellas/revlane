@@ -73,7 +73,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`overflow-x-hidden scroll-smooth ${playfairDisplay.variable} ${inter.variable}`}
+      className={`overflow-x-hidden scroll-smooth ${playfairDisplay.variable} ${instrumentSerif.variable} ${inter.variable}`}
     >
       <body className={`${inter.className} antialiased`}>
         <main className="min-h-screen">{children}</main>

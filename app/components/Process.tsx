@@ -229,15 +229,17 @@ const ProcessSection = () => {
       </motion.div>
 
       <div className="text-center mt-16">
-        <motion.button
+        <motion.a
+          href="https://calendly.com/dellasaymen/discovery-call-revlane"
+          target="_blank"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="group px-8 py-4 bg-primary hover:bg-primary/90 text-background font-poppins font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center gap-2 mx-auto"
+          className="group w-fit px-8 py-4 bg-primary hover:bg-primary/90 text-background font-poppins font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center gap-2 mx-auto"
         >
           <span>Start Your Project Today</span>
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </motion.button>
+        </motion.a>
 
         <motion.div
           initial={{ opacity: 0 }}

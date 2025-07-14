@@ -63,15 +63,22 @@ const Hero = () => {
           variants={childVariants}
           className="flex flex-col sm:flex-row items-center gap-4 mb-12 z-10 relative"
         >
-          <button className="group px-8 py-3.5 bg-primary hover:bg-primary/90 text-background font-poppins font-medium text-base rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center space-x-2">
+          <a
+            href="https://calendly.com/dellasaymen/discovery-call-revlane"
+            target="_blank"
+            className="group px-8 py-3.5 bg-primary hover:bg-primary/90 text-background font-poppins font-medium text-base rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center space-x-2"
+          >
             <span>Book Free Strategy Call</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
 
-          <button className="group px-8 py-3.5 bg-surface hover:bg-surface-variant text-zinc-800 font-poppins font-medium text-base rounded-lg border-2 border-transparent hover:border-primary/30 transition-all duration-300 flex items-center space-x-2">
+          <a
+            href="#case_studies"
+            className="group px-8 py-3.5 bg-surface hover:bg-surface-variant text-zinc-800 font-poppins font-medium text-base rounded-lg border-2 border-transparent hover:border-primary/30 transition-all duration-300 flex items-center space-x-2"
+          >
             <Play className="w-4 h-4 text-primary" />
             <span>See Case Studies</span>
-          </button>
+          </a>
         </motion.div>
 
         <motion.div

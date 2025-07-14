@@ -70,10 +70,14 @@ const CTASection = () => {
               </div>
             </div>
 
-            <button className="group px-14 py-5 bg-primary hover:bg-primary/90 text-white font-bold text-xl rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer flex items-center space-x-3 mx-auto mt-6">
+            <a
+              href="https://calendly.com/dellasaymen/discovery-call-revlane"
+              target="_blank"
+              className="group w-fit px-14 py-5 bg-primary hover:bg-primary/90 text-white font-bold text-xl rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer flex items-center space-x-3 mx-auto mt-6"
+            >
               <span>Book My Discovery Call</span>
               <ArrowRight className="w-6 h-6 group-hover:translate-x-1.5 transition-transform" />
-            </button>
+            </a>
           </motion.div>
 
           <motion.div

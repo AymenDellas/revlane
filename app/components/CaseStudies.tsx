@@ -33,7 +33,7 @@ const CaseStudiesSection = () => {
       focus:
         "Replaced generic cold outreach with personalized, scalable messaging",
       result: "247 meetings booked, reply rate increased from 2.1% → 2.8%",
-      liveLink: "https://leadsurge.com",
+      liveLink: "https://aicoldemails.vercel.app/",
     },
     {
       id: 2,
@@ -42,7 +42,7 @@ const CaseStudiesSection = () => {
       hook: "3x pipeline growth without increasing ad spend",
       focus: "Prioritized high-intent leads using behavioral data and triggers",
       result: "0.7% → 2.1% demo-booking rate, 48% lower cost-per-lead",
-      liveLink: "https://leadzen.ai",
+      liveLink: "leadzen-three.vercel.app",
     },
     {
       id: 3,
@@ -51,12 +51,12 @@ const CaseStudiesSection = () => {
       hook: "20% higher retention without complex dashboards",
       focus: "Helped product teams identify what drives user activation",
       result: "+27% trial-to-paid conversions in 3 weeks",
-      liveLink: "https://syncroiq.io",
+      liveLink: "synchroiq.vercel.app",
     },
   ];
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-6 py-24">
+    <section id="case_studies" className="w-full max-w-7xl mx-auto px-6 py-24">
       <motion.div
         initial="hidden"
         whileInView="visible"
