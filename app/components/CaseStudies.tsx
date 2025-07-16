@@ -42,7 +42,7 @@ const CaseStudiesSection = () => {
       hook: "3x pipeline growth without increasing ad spend",
       focus: "Prioritized high-intent leads using behavioral data and triggers",
       result: "0.7% → 2.1% demo-booking rate, 48% lower cost-per-lead",
-      liveLink: "leadzen-three.vercel.app",
+      liveLink: "https://leadzen-three.vercel.app/",
     },
     {
       id: 3,
@@ -51,7 +51,7 @@ const CaseStudiesSection = () => {
       hook: "20% higher retention without complex dashboards",
       focus: "Helped product teams identify what drives user activation",
       result: "+27% trial-to-paid conversions in 3 weeks",
-      liveLink: "synchroiq.vercel.app",
+      liveLink: "https://synchroiq.vercel.app/",
     },
   ];
 
